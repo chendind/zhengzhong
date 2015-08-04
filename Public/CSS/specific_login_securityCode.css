@@ -1,0 +1,18 @@
+#phoneNum,#password,#secCode{
+	text-align: inherit;
+	font-size: 34px;
+}
+.title{
+	text-align: center;
+}
+#getcode{
+	position: absolute;
+	right: 0;
+}
+.webinput{
+	position: relative;
+	/* padding: 10px; */
+}
+.webinput>input{
+	display: inline-block;
+}

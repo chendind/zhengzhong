@@ -1,0 +1,44 @@
+@media screen and (min-width: 600px) and (max-width: 800px){
+	p,.tables{
+		font-size: 32px;
+	}
+	input{
+		font-size: 28px;
+	}
+	.box{
+		font-size: 30px;
+	}
+	button{
+		font-size: 48px;
+	}
+}
+
+@media screen and (min-width: 801px) and(max-width: 1079px){
+	p,.tables{
+		font-size: 42.7px;
+	}
+	input{
+		font-size: 37.3px;
+	}
+	.box{
+		font-size: 40px;
+	}
+	button{
+		font-size: 64px;
+	}
+}
+
+@media screen and (min-width: 1080px){
+	p,.tables{
+		font-size: 57.6px;
+	}
+	input{
+		font-size: 50.4px;
+	}
+	.box{
+		font-size: 54px;
+	}
+	button{
+		font-size: 86.4px;
+	}
+}

@@ -1,0 +1,73 @@
+/** 一些特别的样式 **/
+.small_input{
+	width: 24.4%;
+}
+.autoset{
+	/*font-size: 31px;*/
+	font-size: 4.1vw;
+	max-height: 4.5vw;
+	max-width: 50vw;
+}
+.box{
+	margin-bottom: 15px;
+}
+#boxsp01{
+	width: 12.3%;
+}
+#boxsp01,#boxsp05,#boxsp06,.tables{
+	margin-left: 5.2%; 
+}
+#boxsp02{
+	width: 24.8%;
+	margin-left: 2.9%;
+}
+#boxsp03{
+	width: 24.3%;
+	margin-left: 3.1%;
+}
+#boxsp04{
+	width: 19.7%;
+	margin-left: 2.9%;
+}
+#boxsp05{
+	width: 20%;
+	/*vertical-align: top;*/
+}
+#boxsp07{
+	margin-left: 7.7%;
+	margin-right: 8.7%;
+}
+#boxsp06,#boxsp07,#boxsp08{
+	width: 24.3%;
+}
+#boxsp01,#boxsp02,#boxsp03,#boxsp04,#boxsp05,#boxsp06,#boxsp07,#boxsp08{
+	padding: 0;
+}
+#datalist01,#datalist02{
+	width: 100%;
+}
+.datalists{
+	position: relative;
+	/*font-size: 36px;*/
+	font-size: 3.3vw;
+	line-height: 1.77;
+	vertical-align: middle;
+	max-height: 19.5vh;
+}
+button{
+	/*font-size: 40px;*/
+	font-size: 3.5vh;
+}
+.autoset{
+/*	line-height: 1.9;*/
+	margin-left: 5%;
+}
+.tables>p{
+	/*font-size: 36px;*/
+	font-size: 4.0vw;
+	margin: 4.2vw 0 2.5vw 0;
+}
+.astable,.astable>div{
+	position: relative;
+	border-color: #ccc;
+}
