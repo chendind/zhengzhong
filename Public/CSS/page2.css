@@ -1,4 +1,4 @@
-﻿/* 以下是类似于table的一串带边框的div
+/* 以下是类似于table的一串带边框的div
  * 子元素中的div都是连着的，个数可以自己定*/
 .astable>:first-child{
 	border-top-style: none;
@@ -15,7 +15,7 @@
 /* 以下是输入框样式 */
 .web_input{ 
 	width: 90%;
-	height: 63px;
+	line-height: 1.5;
 }
 ::-webkit-input-placeholder,.addProject { 
 	color:#ccc; 
@@ -53,17 +53,17 @@ body{
 .foot_button>button{
 	margin-left: 25%;
 	width: 50%;
-	line-height: 80px;
+	line-height: 2;
 }
 
 /* 设置字体样式 */
 div,p,button,h1,input{
-	font-size: 40px;
+	font-size: 16px;
 	font-weight: normal;
 }
 
 .smallType{
-	font-size: 27px;
+	font-size: 14px;
 }
 /* .title是某些页面的顶部栏样式
  * 它下面的盒子需要适当减少上边距*/
@@ -75,6 +75,7 @@ div.title{
 	line-height: 2.42em;
 	text-align: center;
 	background-color: #cb9743;
+	font-size: 20px;
 }
 .title>div{
 	position: absolute;
@@ -104,6 +105,9 @@ div.tableAdjust{
 .tableAdjust img, .tableAdjust>div>div, .tableAdjust span, .tableAdjust input{
 	margin-left: 0.9em;
 	vertical-align: middle;
+}
+.tableAdjust img{
+	width: 30px;
 }
 .tableAdjust>div>div{
 	display: inline-block;

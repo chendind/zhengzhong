@@ -49,22 +49,19 @@
 .datalists{
 	position: relative;
 	/*font-size: 36px;*/
-	font-size: 3.3vw;
+	/* font-size: 3.3vw; */
 	line-height: 1.77;
 	vertical-align: middle;
 	max-height: 19.5vh;
 }
 button{
-	/*font-size: 40px;*/
-	font-size: 3.5vh;
+	font-size: 20px;
 }
 .autoset{
-/*	line-height: 1.9;*/
 	margin-left: 5%;
 }
 .tables>p{
-	/*font-size: 36px;*/
-	font-size: 4.0vw;
+	font-size: 15px;
 	margin: 4.2vw 0 2.5vw 0;
 }
 .astable,.astable>div{

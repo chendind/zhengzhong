@@ -2,6 +2,12 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>诊中2</title>
 	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/page2.css">
 	<script src="/tp/Public/js/jquery-2.1.4.min.js"></script>
 	<script src="/tp/Public/js/page2.js"></script>

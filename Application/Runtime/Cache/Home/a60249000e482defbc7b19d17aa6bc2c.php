@@ -5,7 +5,8 @@
 	<meta name="viewport" content="user-scalable=no">
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
 	<meta name="viewport" content="width=device-width">
-	<title>page1</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>诊中1</title>
 	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/common.css">
 	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/specific.css">
 	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/generics.css">
@@ -66,5 +67,22 @@
 	
 
 	<div class="foot"></div>
+	<script>
+	/*   以下是select 框选中部分发生改变时，对应的datalist框发生对应改变的事件  */
+	$("select").change(function(){
+		var $selected=$(this).children('option:selected');
+		var length=$selected.size();
+		var i,insts;
+		var datalists=$(this).next(".datalists");
+		datalists.children().remove();
+		for(i=0;i<length;i++){
+			insts="<div><span>"+$selected[i].value+"</span><img src='/tp/Public/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+			$(insts).appendTo(datalists);
+		}
+		if(length>=1){
+			datalists.show();
+		}
+	});
+	</script>
 </body>
 </html>
