@@ -34,21 +34,7 @@ $(document).ready(function(){
 		$(this.parentNode).remove();
 	});
 
-	/*   以下是select 框选中部分发生改变时，对应的datalist框发生对应改变的事件  */
-	$("select").change(function(){
-		var $selected=$(this).children('option:selected');
-		var length=$selected.size();
-		var i,insts;
-		var datalists=$(this).next(".datalists");
-		datalists.children().remove();
-		for(i=0;i<length;i++){
-			insts="<div><span>"+$selected[i].value+"</span><img src='/tp/Public/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-			$(insts).appendTo(datalists);
-		}
-		if(length>=1){
-			datalists.show();
-		}
-	});
+	
 
 	/**  以下是关系选项的自定义部分的效果 **/
 	var autoset=$("#boxsp05");

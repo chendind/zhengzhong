@@ -2,9 +2,14 @@
 
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/page2.css">
-	<script src="/tp/Public/js/jquery-2.1.4.min.js"></script>
-	<script src="/tp/Public/js/page2.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
+	<title>诊中2</title>
+	<link rel="stylesheet" type="text/css" href="/zhengzhong/Public/CSS/page2.css">
+	<script src="/zhengzhong/Public/js/jquery-2.1.4.min.js"></script>
+	<script src="/zhengzhong/Public/js/page2.js"></script>
 </head>
 <body>
 	<!-- .astable可以设置其子元素中的div是类似于table的竖排。只有一列,每一行都是由其子元素来撑开的。 -->
@@ -16,12 +21,12 @@
 	</div> -->
 	<div class="title">
 		<div class="title_img_left">
-			<img src="/tp/Public/img/backpic.png" alt="backpic">
+			<img src="/zhengzhong/Public/img/backpic.png" alt="backpic">
 		</div>
 		
 		<span>诊断输入</span>
 		<div class="title_img_right">
-			<img src="/tp/Public/img/mailpic.png" alt="backpic">
+			<img src="/zhengzhong/Public/img/mailpic.png" alt="backpic">
 		</div>
 	</div>
 	
@@ -37,7 +42,7 @@
 		<p>查询人的药物处方和检查项目：</p>
 		<div class="tableAdjust">
 			<div>
-				<img src="/tp/Public/img/addpic.png" alt="添加" id="addPic">
+				<img src="/zhengzhong/Public/img/addpic.png" alt="添加" id="addPic">
 				<input class="addProject specialInput" placeholder="添加项目">
 			</div>
 		</div>
