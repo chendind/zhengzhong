@@ -1,39 +1,7 @@
-html,body{
-    margin: 0;
-    height: 100%;
-}
-
-#title{
-    background-color: white;
-    height: 8%;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-}
-#title>.title_img_left{
-    height: 60%;
-    margin-left: 10px;
-}
-.content {
-	position: relative;
-    background-color: white;
-    height: 82.8%;
-    overflow-y: auto;
-	margin: 0;
-}
-.foot_button{
-	margin-top: 42px;
-	width: 100%;
-    font-size: 4.5vw;
-}
-.foot_button>button{
-	margin-left: 25%;
-    width: 50%;
-    line-height: 2;
-}
 #phoneNum{
 	background: none;
 }
 .webinput>input{
-	color: black;
 	padding-left: 20px;
+	width: 82%;
 }

@@ -1,28 +1,36 @@
+.title{
+	height: 8%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.title>.title_img_left{
+	height: 60%;
+	margin-left: 10px;
+}
 .content{
 	background-color: white; 
 }
-#phoneNum,#password,#secCode{
-	text-align: inherit;
-	font-size: 18px;
-	width: 75%;
-}
-.title{
-	text-align: center;
-}
+/*#phoneNum,#password,#secCode{
+	
+}*/
+
 #getcode{
 	position: absolute;
 	right: 8%;
-	top: 18%;
-	padding: 8px .5em;
+	top: 15%;
+	padding: 5px .5em;
 }
 .webinput{
 	position: relative;
+	width: 100%;
 }
 .webinput>input{
 	display: block;
 	margin: 0 auto;
-	width: 60%;
-	padding: 16px 40px;
+	padding: 10px 0 10px 35px;
+	text-align: inherit;
+	font-size: 18px;
+	width: 78%;
 }
 .webinput>input:-webkit-input-placeholder{
 	color: blue;
@@ -30,12 +38,22 @@
 }
 /*input styles.*/
 #phoneNum{
-	background: url(../img/phonepic.png) no-repeat left;
+	background: url(../img/phonepic.png) no-repeat 10px;
 }
 #password{
-	background: url(../img/passwordpic.png) no-repeat left;
+	background: url(../img/passwordpic.png) no-repeat 10px;
 }
 p.tips{
 	margin: 5px 22px;
     font-size: 14px;
+}
+.foot_button{
+	margin-top: 42px;
+	width: 100%;
+    font-size: 4.5vw;
+}
+.foot_button>button{
+	margin-left: 25%;
+    width: 50%;
+    line-height: 2;
 }
