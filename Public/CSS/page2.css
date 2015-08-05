@@ -105,11 +105,12 @@ div.tableAdjust{
 	max-height: 600px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	padding: 5px;
 }
 .tableAdjust>div{
 	height: 25px;
 	position: relative;
-	border-bottom: 1px solid #ccc;
+	/* border-bottom: 1px solid #ccc; */
 	padding: 2px 0 2px 0;
 }
 .tableAdjust img, .tableAdjust>div>div, .tableAdjust span, .tableAdjust input{

@@ -12,6 +12,14 @@ $(document).ready(function(){
     });
   });
 
+  /*输入项目框 enter 键事件*/
+  $(".addProject").keypress(function(e){
+    if(e.keyCode==13){
+      $("#addPic").click();
+    }
+    //alert(e.keyCode);
+  });
+
   /*从datalists中选中了某个行*/
   $(".datalists").each(function(index,element){
     $(element).click(function(e){
