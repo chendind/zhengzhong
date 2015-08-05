@@ -1,6 +1,9 @@
+.content{
+	background-color: white; 
+}
 #phoneNum,#password,#secCode{
 	text-align: inherit;
-	font-size: 34px;
+	font-size: 18px;
 }
 .title{
 	text-align: center;
@@ -12,7 +15,26 @@
 .webinput{
 	position: relative;
 	/* padding: 10px; */
+	/* overflow: hidden; */
 }
 .webinput>input{
-	display: inline-block;
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	padding: 16px 40px;
+}
+.webinput>input:-webkit-input-placeholder{
+	color: blue;
+	margin-left: 40px;
+}
+/*input styles.*/
+#phoneNum{
+	background: url(../img/phonepic.png) no-repeat left;
+}
+#password{
+	background: url(../img/passwordpic.png) no-repeat left;
+}
+p.tips{
+	margin: 5px 22px;
+    font-size: 14px;
 }
