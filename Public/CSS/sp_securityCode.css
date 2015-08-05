@@ -1,0 +1,29 @@
+.title {
+    position: relative;
+    width: 100%;
+    height: 6.6%;
+    font-size: 20px;
+}
+.content {
+	position: relative;
+    background-color: white;
+    height: 82.8%;
+    overflow-y: auto;
+}
+.foot_button{
+	margin-top: 42px;
+	width: 100%;
+    font-size: 4.5vw;
+}
+.foot_button>button{
+	margin-left: 25%;
+    width: 50%;
+    line-height: 2;
+}
+#phoneNum{
+	background: none;
+}
+.webinput>input{
+	color: black;
+	padding-left: 20px;
+}

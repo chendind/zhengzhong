@@ -4,18 +4,19 @@
 #phoneNum,#password,#secCode{
 	text-align: inherit;
 	font-size: 18px;
+	width: 75%;
 }
 .title{
 	text-align: center;
 }
 #getcode{
 	position: absolute;
-	right: 0;
+	right: 5%;
+	top: 18%;
+	padding: 8px .5em;
 }
 .webinput{
 	position: relative;
-	/* padding: 10px; */
-	/* overflow: hidden; */
 }
 .webinput>input{
 	display: block;
