@@ -13,6 +13,21 @@ html,body{
 	height: 6.6%;
 	font-size: 20px;
 }
+.title img{
+	mix-blend-mode: multiply;
+	position: absolute;
+	top: 50%;
+	transform: translate(0,-50%);
+	-webkit-transform: translate(0,-50%);
+}
+.title>.title_img_left{
+	left: 0;
+	height: 100%;
+}
+.title>.title_img_right{
+	right: 0;
+	height: 100%;
+}
 .title>span{
 	position: absolute;
 	top: 50%;
@@ -22,10 +37,13 @@ html,body{
 	display: block;
 }
 .content{
-	height: 82.8%;
 	position: relative;
-	background-color: #eee;
 	overflow-y: auto;
+	min-height: 50%;
+}
+.box{
+	font-size: 12px;
+	background-color: white;
 }
 /*foot 是底下的导航栏样式*/
 .foot{
@@ -35,53 +53,6 @@ html,body{
 
 .hightlight,.box,.foot_box,input{
 	text-align: center;
-}
-/*******************/
-.square_select,.square{
-	overflow: hidden;
-}
-.box{
-	display: inline-block;
-	padding-top: 12px;
-	padding-bottom: 12px;
-	background-color: white;
-	line-height: 1.9;
-}
-.box{
-	/*font-size: 34px;*/
-	font-size: 3.7vw;
-}
-.title_p{
-	margin-left: 5.2%;
-	margin-bottom: 8px;
-	margin-top: 5px;
-}
-
-.tables{
-	float: left;
-	width: 38.5%; 
-	overflow: hidden;
-}
-.tables+.tables{
-	margin-left: 9.5vw;
-}
-.tables>select,.foot_button{
-	width: 100%;
-	font-size: 4.5vw;
-}
-.warning{
-	border: 2px solid #f00;
-}
-.foot_button{
-	/* height: 190px; */
-	margin-top: 42px;
-	background-color: white;
-	/* line-height: 190px; */
-}
-.foot_button>button{
-	margin-left: 25%;
-	width: 50%;
-	line-height: 2;
 }
 
 /************/

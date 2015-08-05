@@ -1,0 +1,111 @@
+/*******************/
+.content{
+	background-color: #eee;
+}
+.square_select,.square{
+	overflow: hidden;
+}
+.box{
+	display: inline-block;
+	padding: 0;
+	line-height: 1.9;
+	float: left;
+}
+
+.title_p{
+	margin-left: 5.2%;
+	margin-bottom: 8px;
+	margin-top: 5px;
+}
+
+.tables{
+	float: left;
+	width: 38.5%; 
+	overflow: hidden;
+}
+.tables+.tables{
+	margin-left: 9.5vw;
+}
+.tables>select,.foot_button{
+	width: 100%;
+	font-size: 4.5vw;
+}
+.warning{
+	border: 2px solid #f00;
+}
+.foot_button{
+	/* height: 190px; */
+	margin-top: 42px;
+	background-color: white;
+	/* line-height: 190px; */
+}
+.foot_button>button{
+	margin-left: 25%;
+	width: 50%;
+	line-height: 2;
+}
+
+.small_input{
+	width: 24.4%;
+}
+.autoset{
+	/*font-size: 31px;*/
+	font-size: 4.1vw;
+	max-height: 4.5vw;
+	max-width: 50vw;
+}
+.box{
+	margin-bottom: 10px;
+}
+#boxsp01{
+	width: 12.3%;
+}
+#boxsp01,#boxsp05,#boxsp06,.tables{
+	margin-left: 5.2%; 
+}
+#boxsp02{
+	width: 22.8%;
+	margin-left: 2.9%;
+}
+#boxsp03{
+	width: 22.3%;
+	margin-left: 3.1%;
+}
+#boxsp04{
+	width: 18.7%;
+	margin-left: 2.9%;
+}
+#boxsp05{
+	width: 20%;
+	/*vertical-align: top;*/
+}
+#boxsp07{
+	margin-left: 7.7%;
+	margin-right: 8.7%;
+}
+#boxsp06,#boxsp07,#boxsp08{
+	width: 24.3%;
+}
+#datalist01,#datalist02{
+	width: 100%;
+}
+.datalists{
+	position: relative;
+	vertical-align: middle;
+	max-height: 19.5vh;
+}
+button{
+	font-size: 20px;
+}
+.autoset{
+	margin-left: 5%;
+}
+.tables>p{
+	font-size: 15px;
+	margin: 4.2vw 0 2.5vw 0;
+}
+.astable,.astable>div{
+	position: relative;
+	border-color: #ccc;
+	padding: 2px 0 2px 0;
+}
