@@ -107,16 +107,20 @@ div.tableAdjust{
 	overflow-x: hidden;
 }
 .tableAdjust>div{
+	height: 25px;
 	position: relative;
-	line-height: 2.5em;
 	border-bottom: 1px solid #ccc;
+	padding: 2px 0 2px 0;
 }
 .tableAdjust img, .tableAdjust>div>div, .tableAdjust span, .tableAdjust input{
 	margin-left: 0.9em;
 	vertical-align: middle;
 }
+.tableAdjust img:first-child{
+	height: 100%;
+}
 .tableAdjust img{
-	width: 30px;
+	display: inline-block;
 }
 .tableAdjust>div>div{
 	display: inline-block;
@@ -132,7 +136,8 @@ div.tableAdjust{
 .deleteProject{
 	position: absolute;
 	right: 0;
-	top: 0.7em;
+	top: 5%;
+	height: 80%;
 }
 
 .addSpan{

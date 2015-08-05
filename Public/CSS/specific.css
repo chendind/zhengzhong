@@ -48,9 +48,6 @@
 }
 .datalists{
 	position: relative;
-	/*font-size: 36px;*/
-	/* font-size: 3.3vw; */
-	line-height: 1.77;
 	vertical-align: middle;
 	max-height: 19.5vh;
 }
@@ -67,4 +64,5 @@ button{
 .astable,.astable>div{
 	position: relative;
 	border-color: #ccc;
+	padding: 2px 0 2px 0;
 }

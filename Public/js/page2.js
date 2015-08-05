@@ -17,10 +17,10 @@ $(document).ready(function(){
     $(element).click(function(e){
       if(index==1){
         var types=e.target.getAttribute("ctype");
-        var imgsrc='/tp/Public/img/'+types+'.png';
+        var imgsrc=curPUBLIC+'/img/'+types+'.png';
         var textContent=e.target.textContent;
         var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
-        inst+="<img src='/tp/Public/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+        inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
         $(inst).prependTo($('.tableAdjust'));
         if(types=='inspect'){
           inspectArr.push(textContent);
@@ -84,20 +84,20 @@ $(document).ready(function(){
           success: function(data){
             if(data.count==0){
               notfoundArr.push($("input:eq(1)")[0].value);
-              imgsrc='/tp/Public/img/unknow.png';
+              imgsrc=curPUBLIC+'/img/unknow.png';
             }
             else{
              if(data.list[0].type=='medicine'){
-              imgsrc='/tp/Public/img/medicine.png';
+              imgsrc=curPUBLIC+'/img/medicine.png';
               medicineArr.push($("input:eq(1)")[0].value);
              }
              else if(data.list[0].type=='inspect'){
-              imgsrc='/tp/Public/img/inspect.png';
+              imgsrc=curPUBLIC+'/img/inspect.png';
               inspectArr.push($("input:eq(1)")[0].value);
              }
             }
             var inst="<div><img src="+imgsrc+" alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
-            inst+="<img src='/tp/Public/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+            inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
             $(inst).prependTo($('.tableAdjust'));
             
             $("input:eq(1)").focus();$("input:eq(1)")[0].value=null;
@@ -178,7 +178,7 @@ function timeOut(index){
 
 function dropElemFromArr(arr,textContent){
   if(arr.length){
-    console.log(arr.length);
+    //console.log(arr.length);
     var length=arr.length,i;
     for(i=1;i<=length;i++){
       if(arr[i-1]==textContent){
