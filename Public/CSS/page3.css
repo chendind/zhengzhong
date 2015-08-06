@@ -1,0 +1,67 @@
+.title{
+	position: absolute;
+	top: 0;
+	border-bottom: 1px solid #ccc;
+}
+.content{
+	height: 87%;
+	margin-top: 8%;
+}
+.result_overview{
+	margin: 30px 0 10px 0;
+	padding: 2px;
+}
+.result_overview>img{
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+}
+.result_title{
+	font-size: 14px;
+	margin: 0;
+}
+.result_view{
+	position: relative;
+	width: 90%;
+	margin: 0 auto;
+}
+
+/* 底部导航栏 */
+.foot{
+	position: absolute;
+	top: 92.5%;
+	width: 100%;
+}
+.middleline{
+	position: absolute;
+	left: 50%;
+	height: 100%;
+	border-left: 1px solid #ccc;
+}
+.foot_back{
+	width: 49%;
+}
+.consult{
+	width: 49%;
+}
+.consult,.foot_back{
+	position: relative;
+	float: left;
+	height: 100%;
+}
+.foot img{
+	height: 45%;
+	display: inline-block;
+	margin-left: 25%;
+	vertical-align: top;
+}
+.foot span{
+	display: inline-block;
+	margin-left: 45%;
+}
+.foot img,.foot span{
+	position: absolute;
+	top: 50%;
+	-webkit-transform:translate(0,-50%);
+	transform:translate(0,-50%);
+}
