@@ -6,11 +6,27 @@ var url=["getcommonname","getMedicineAndInspectList"];
 $(document).ready(function(){
   $("input").each(function(index,element){
     $(element).keyup(function(){
+      /*更改确认或者取消*/
+      if((index==1)&&($("input:eq(1)").text())){
+        $("#cancelorconfirm").html("确认");
+      }
+      else{
+        $("#cancelorconfirm").html("取消");
+      }
       clearTimeout(timeId);
       $(".datalists:eq("+index+")").children().remove();
       timeId=setTimeout(timeOut(index),500);
     });
   });
+
+  $("#cancelorconfirm").click(function(){
+    if($("#cancelorconfirm").html()=="取消"){
+      $(".hidedom").hide();
+    }
+    else{
+      //add option;
+    }
+  })
 
   /*输入项目框 enter 键事件*/
   $(".addProject").keypress(function(e){
@@ -20,39 +36,47 @@ $(document).ready(function(){
     //alert(e.keyCode);
   });
 
-  /*从datalists中选中了某个行*/
+  /*从datalists中选中了某个行,datalists是后台获得的备选列表*/
   $(".datalists").each(function(index,element){
     $(element).click(function(e){
-      if(index==1){
-        var types=e.target.getAttribute("ctype");
-        var imgsrc=curPUBLIC+'/img/'+types+'.png';
-        var textContent=e.target.textContent;
-        var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
-        inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-        $(inst).prependTo($('.tableAdjust'));
-        if(types=='inspect'){
-          inspectArr.push(textContent);
-          window.sessionStorage.setItem("inspectArr",inspectArr);
+      if(index==1){//药品名和检查项目的备选列表
+        //选中高亮所选的框
+        $(e.target).toggleClass("selectedItem");
+        if($(e.target).hasClass("selectedItem")){
+           var types=e.target.getAttribute("ctype");
+           var imgsrc=curPUBLIC+'/img/'+types+'.png';
+           var textContent=e.target.textContent;
+           var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
+           inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+           $(inst).prependTo($('.tableAdjust'));//添加到对应的药物、检查项目列表里；
+           if(types=='inspect'){
+             inspectArr.push(textContent);
+             window.sessionStorage.setItem("inspectArr",inspectArr);
+           }
+           if(types=='medicine'){
+             medicineArr.push(textContent);
+             window.sessionStorage.setItem("medicineArr",medicineArr);
+           }
         }
-        if(types=='medicine'){
-          medicineArr.push(textContent);
-          window.sessionStorage.setItem("medicineArr",medicineArr);
+        else{
+          console.log('delete selected option');
         }
         $("input:eq("+index+")")[0].value=null;
         $("input:eq(1)").focus();
       }
       else{
         $("input:eq("+index+")")[0].value=e.target.textContent;
+        $(element).hide();
       }
-      $(element).hide();
+      
     });
   });
 
-  $(document).click(function(event){
-    if($(event.target).parents(".datalists").size()==0){
-      $(".datalists").hide();
-    }
-  });
+  // $(document).click(function(event){
+  //   if($(event.target).parents(".datalists").size()==0){
+  //     $(".datalists").hide();
+  //   }
+  // });
 
   $(document).on("click",".deleteProject",function(e){
     this.parentNode.remove();
@@ -75,7 +99,7 @@ $(document).ready(function(){
       }
     }
   });
-  
+  /*
   $("#addPic").click(function(){
      var imgsrc;
      var inputVal=$("input:eq(1)")[0].value;
@@ -117,6 +141,12 @@ $(document).ready(function(){
           },
         });
      }     
+  });*/
+
+  $("#addPic").parent().click(function(){
+    console.log('new add method.');
+    $(".hidedom").show();
+    $("input")[1].focus();
   });
 
   $(".title_img_left").click(function(){
@@ -130,15 +160,17 @@ $(document).ready(function(){
     }
     var sessions=window.sessionStorage;
     sessions.setItem("diagnosis",$(".web_input")[0].value);
-    if(sessions.getItem("oid")==null){
-      console.log('no oid');
-    }
-    else if(!sessions.getItem("age")){
+    // if(sessions.getItem("oid")==null){
+    //   console.log('no oid');
+    // }
+    // else
+    if(!sessions.getItem("age")){
       console.log('session out of time');
       window.location.href="page1.html";
     }
     else{
-      console.log('ready to post order');
+      // console.log('ready to post order');
+      location.href="page3.html";
     }
   });
 });

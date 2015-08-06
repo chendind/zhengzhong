@@ -109,3 +109,6 @@ button{
 	border-color: #ccc;
 	padding: 2px 0 2px 0;
 }
+input{
+	text-align: center;
+}

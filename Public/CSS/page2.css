@@ -17,16 +17,18 @@
 	width: 90%;
 	line-height: 1.5;
 	margin: 0 2px;
+	text-align: inherit;
 }
 ::-webkit-input-placeholder,.addProject { 
 	color:#ccc; 
 }
 .specialInput{
 	border: none;
+	text-align: inherit;
 }
-.specialInput:focus{
+/*.specialInput:focus{
 	border: 1px solid #00f;
-}
+}*/
 .small_input{
 	width: 30%;
 }
@@ -105,8 +107,8 @@ div.title{
 div.tableAdjust{
 	width: 90%;
 	max-height: 600px;
-	overflow-y: auto;
-	overflow-x: hidden;
+	/* overflow-y: auto; */
+	/* overflow-x: hidden; */
 	padding: 5px;
 }
 .tableAdjust>div{
@@ -138,7 +140,7 @@ div.tableAdjust{
 .deleteProject{
 	position: absolute;
 	right: 0;
-	top: 5%;
+	top: 48%;
 	height: 80%;
 }
 
@@ -161,3 +163,30 @@ div.tableAdjust{
 .warning{
 	border: 2px solid #f00;
 }
+
+#addPic{
+	display: inline-block;
+	height: 25px;
+	margin-left: 0.9em;
+    vertical-align: middle;
+}
+
+.new_input_board{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	z-index: 101;
+	background-color: white;
+	opacity: .85;
+}
+.new_board{
+	background-color: white;
+	position: relative;
+}
+/*.selected{
+	background-color: black;
+	color: white;
+}*/

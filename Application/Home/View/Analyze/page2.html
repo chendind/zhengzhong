@@ -15,9 +15,7 @@
 </head>
 <body>
 	<div class="title">
-		<div class="title_img_left">
-			<img src="__PUBLIC__/img/backpic.png" alt="backpic">
-		</div>
+		<img class="title_img_left" src="__PUBLIC__/img/backpic.png" alt="backpic">
 		<span>诊断输入</span>
 	</div>
 	
@@ -31,15 +29,24 @@
 		
 		<p class="smallType">Tips: 若不知道诊断名，请前往人工咨询</p>
 		<p>查询人的药物处方和检查项目：</p>
+		<div>
+			<img src="__PUBLIC__/img/addpic.png" alt="添加" id="addPic">
+			<span class="addProject specialInput">添加项目</span>
+		</div>
 		<div class="tableAdjust">
-			<div>
+			<!-- <div>
 				<img src="__PUBLIC__/img/addpic.png" alt="添加" id="addPic">
 				<input class="addProject specialInput" placeholder="添加项目">
-			</div>
+			</div> -->
 		</div>
-		<div class="datalists astable" id="datalist02"></div>
+		<!-- <div class="datalists astable" id="datalist02"></div> -->
 	</div>
-	
+	<div class="hidedom new_input_board"> <!-- 弹出的输入框界面，输入药物和检查项目 -->
+		<div class="new_board">
+			<input type="text"><span id="cancelorconfirm">取消</span>
+			<div class="datalists astable" id="datalist02"></div>
+		</div>
+	</div>
 	<div class="foot_button"><button>确认并提交</button></div>
 	<script>
 		curURL='__URL__';//对应controller的路径
