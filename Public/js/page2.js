@@ -7,8 +7,8 @@ $(document).ready(function(){
   $("input").each(function(index,element){
     $(element).keyup(function(){
       /*更改确认或者取消*/
-      if((index==1)&&($("input:eq(1)").text())){
-        $("#cancelorconfirm").html("确认");
+      if((index==1)&&($("input")[1].value)){
+        $("#cancelorconfirm").html("添加");
       }
       else{
         $("#cancelorconfirm").html("取消");
@@ -24,7 +24,26 @@ $(document).ready(function(){
       $(".hidedom").hide();
     }
     else{
-      //add option;
+      //用户手动输入项的输入
+      var itemName=$("input")[1].value;
+      var datalists=$("div.datalists:eq(1)>div:contains("+itemName+")");//第二个候选框
+      if(datalists.length==0){
+        //这个项目并没有相近的候选项，类别为notfound
+        var alreadyInputs=$("div.tableAdjust>div:contains("+itemName+")");
+        if(alreadyInputs.length==0){//已添加的项目中也没有这条记录
+          notfoundArr.push($("input:eq(1)")[0].value);
+          window.sessionStorage.setItem('notfoundArr',notfoundArr);
+          var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
+          inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+          $(inst).prependTo($('div.tableAdjust'));
+          showmsg('添加成功');
+        }
+        else{
+          showmsg('已经添加成功了');
+          $("input")[1].value=null;
+          $("input:eq(1)").focus();
+        }
+      }
     }
   })
 
@@ -41,9 +60,12 @@ $(document).ready(function(){
     $(element).click(function(e){
       if(index==1){//药品名和检查项目的备选列表
         //选中高亮所选的框
-        $(e.target).toggleClass("selectedItem");
-        if($(e.target).hasClass("selectedItem")){
-           var types=e.target.getAttribute("ctype");
+        // $(e.target).toggleClass("selectedItem");
+        var itemName=e.target.textContent;
+        var types=e.target.getAttribute("ctype");
+        var msg="添加成功";
+        if(!chkItemExist(itemName,types)){//添加medicine or inspect
+           
            var imgsrc=curPUBLIC+'/img/'+types+'.png';
            var textContent=e.target.textContent;
            var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
@@ -57,9 +79,12 @@ $(document).ready(function(){
              medicineArr.push(textContent);
              window.sessionStorage.setItem("medicineArr",medicineArr);
            }
+           showmsg(msg);//淡入淡出消息框
         }
         else{
-          console.log('delete selected option');
+          msg="取消成功";
+          showmsg(msg);
+          //console.log('delete selected option');
         }
         $("input:eq("+index+")")[0].value=null;
         $("input:eq(1)").focus();
@@ -78,6 +103,7 @@ $(document).ready(function(){
   //   }
   // });
 
+  /* 点击条目上的删除图标的行为 */
   $(document).on("click",".deleteProject",function(e){
     this.parentNode.remove();
     var contt=this.parentNode.textContent;
@@ -144,8 +170,8 @@ $(document).ready(function(){
   });*/
 
   $("#addPic").parent().click(function(){
-    console.log('new add method.');
-    $(".hidedom").show();
+    console.log('show hide div board.');
+    $("div.hidedom").show();
     $("input")[1].focus();
   });
 
@@ -159,12 +185,12 @@ $(document).ready(function(){
       return false;
     }
     var sessions=window.sessionStorage;
-    sessions.setItem("diagnosis",$(".web_input")[0].value);
+    sessions.setItem("diagnosis",$(".web_input")[0].value);//检查诊断名
     // if(sessions.getItem("oid")==null){
     //   console.log('no oid');
     // }
     // else
-    if(!sessions.getItem("age")){
+    if(!sessions.getItem("age")){  //检查上一页的表单信息
       console.log('session out of time');
       window.location.href="page1.html";
     }
@@ -173,7 +199,7 @@ $(document).ready(function(){
       location.href="page3.html";
     }
   });
-});
+});/* end of document.ready */
 
 /* timeOut 延迟发送post查找匹配的诊断名，药物，项目名*/
 function timeOut(index){
@@ -203,11 +229,14 @@ function timeOut(index){
               }
               $(options).appendTo($(".datalists:eq("+index+")"));
               $(".datalists:eq("+index+")").show();
+              $("p.hidedom").hide();
             }
           }
           else{
               //console.log('no ret');
-              ;
+              if(index==1){
+                $("p.hidedom").show();
+              }
           }
        }, 
       error:function (){ 
@@ -228,4 +257,38 @@ function dropElemFromArr(arr,textContent){
     }
   }  
   return 0;
+}
+
+/* 淡入淡出控制函数 */
+function showmsg(msg){
+  $(".msgalerted").text(msg);
+  $(".msgalerted").fadeIn("slow",function(){
+    $(".msgalerted").fadeOut("slow");
+  });
+}
+
+/* 检查目标项是否在已选列表中 */
+function chkItemExist(itemName,type){
+  var tableAdjustDivs=$(".tableAdjust>div");
+  if(tableAdjustDivs.length==0){
+    return false;
+  }
+  var i,length=tableAdjustDivs.length,flaggg=false;
+  for(i=0;i<length;i++){
+    if(tableAdjustDivs[i].textContent==itemName){
+      $(tableAdjustDivs[i]).remove();
+      if(type=='medicine'){
+        if(dropElemFromArr(medicineArr,itemName)==1){
+          window.sessionStorage.setItem("medicineArr",medicineArr);
+        }
+      }
+      if(type='inspect'){
+        if(dropElemFromArr(inspectArr,itemName)==1){
+          window.sessionStorage.setItem("inspectArr",inspectArr);
+        }
+      }
+      return true;
+    }
+  }
+  return false;
 }
