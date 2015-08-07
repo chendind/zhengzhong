@@ -74,28 +74,13 @@ div,p,button,h1,input{
 div.title{
 	margin-bottom: 25px;
 	line-height: 2.42em;
-	background-color: #cb9743;
 }
 .title>div{
 	position: absolute;
 	display: inline-block;
 	/* width: 150px; */
 }
-.title img{
-	mix-blend-mode: multiply;
-	position: absolute;
-	top: 50%;
-	transform: translate(0,-50%);
-	-webkit-transform: translate(0,-50%);
-}
-.title>.title_img_left{
-	left: 0;
-	height: 90%;
-}
-.title>.title_img_right{
-	right: 0;
-	height: 100%;
-}
+
 /* .tableAdjust会生成一个有最大高度的
  *  盒子 如果一行内有两行对齐的文字需
  *  要加个内联块状的div*/

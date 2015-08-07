@@ -1,18 +1,12 @@
 .title{
-	height: 8%;
     margin-bottom: 10px;
     border-bottom: 1px solid #ccc;
 }
-.title>.title_img_left{
-	height: 60%;
-	margin-left: 10px;
-}
+
 .content{
 	background-color: white; 
 }
-/*#phoneNum,#password,#secCode{
-	
-}*/
+
 
 #getcode{
 	position: absolute;
@@ -45,7 +39,9 @@
 }
 p.tips{
 	margin: 5px 22px;
-    font-size: 14px;
+    
+	font-size: 12px;
+    text-align: right;
 }
 .foot_button{
 	margin-top: 42px;
