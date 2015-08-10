@@ -183,4 +183,5 @@ div.msgalerted{
 	text-align: center;
 	background-color: #ccc;
 	display: none;
+	z-index: 102;
 }

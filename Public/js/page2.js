@@ -211,9 +211,10 @@ function timeOut(index){
        data:{name:inputVal},
        success: function (data) {
           if (data.count>0) {
+            console.log(data);
             ret=data;
-            var options,i;
-            for(i=0;i<data.count;i++){
+            var options,i,j=Math.min(data.count,50);
+            for(i=0;i<j;i++){
               if(index==0){
                 options="<div>"+data.list[i].name+"</div>";
               }
@@ -261,9 +262,10 @@ function dropElemFromArr(arr,textContent){
 
 /* 淡入淡出控制函数 */
 function showmsg(msg){
-  $(".msgalerted").text(msg);
-  $(".msgalerted").fadeIn("slow",function(){
-    $(".msgalerted").fadeOut("slow");
+  console.log(msg);
+  $("div.msgalerted").text(msg);
+  $("div.msgalerted").fadeIn("normal",function(){
+    $("div.msgalerted").fadeOut("normal");
   });
 }
 

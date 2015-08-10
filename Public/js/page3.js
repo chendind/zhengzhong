@@ -8,17 +8,20 @@ $(document).ready(function(){
 	});
 
 	var oid='1000017';//获取oid
-	sendMsg(oid);
+	//sendMsg(oid);
 });
 
 function sendMsg(myoid){
 	console.log(window.sessionStorage);
 	var taboos=[];
-	taboos.concat(JSON.parse(window.sessionStorage.selected01),JSON.parse(window.sessionStorage.selected02));
-	taboos=taboos.toString();
+	if(window.sessionStorage.selected01){
+		taboos.concat(JSON.parse(window.sessionStorage.selected01),JSON.parse(window.sessionStorage.selected02));
+		taboos=taboos.toString();
+	}
+	
 	var notfounds;
 	if(window.sessionStorage.notfoundArr){
-		notfounds=notfoundArr;
+		notfounds=window.sessionStorage.notfoundArr;
 	}
 	else{
 		notfounds='';
