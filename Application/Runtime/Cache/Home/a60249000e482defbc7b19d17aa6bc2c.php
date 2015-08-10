@@ -7,11 +7,11 @@
 	<meta name="viewport" content="width=device-width">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>诊中1</title>
-	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/common.css">
-	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/specific.css">
-	<link rel="stylesheet" type="text/css" href="/tp/Public/CSS/generics.css">
-	<script src="/tp/Public/js/jquery-2.1.4.min.js"></script>
-	<script src="/tp/Public/js/page1.js"></script>
+	<link rel="stylesheet" type="text/css" href="/zhengzhong/Public/CSS/common.css">
+	<link rel="stylesheet" type="text/css" href="/zhengzhong/Public/CSS/page1.css">
+
+	<script src="/zhengzhong/Public/js/jquery-2.1.4.min.js"></script>
+	<script src="/zhengzhong/Public/js/page1.js"></script>
 </head>
 <body>
 	<div class="title hightlight"><span>诊中查询</span></div>
@@ -64,25 +64,10 @@
 		<div class="foot_button"><button>下一步</button></div>
 	</div>
 
-	
-
-	<div class="foot"></div>
+<!-- 	<div class="foot"></div> -->
 	<script>
-	/*   以下是select 框选中部分发生改变时，对应的datalist框发生对应改变的事件  */
-	$("select").change(function(){
-		var $selected=$(this).children('option:selected');
-		var length=$selected.size();
-		var i,insts;
-		var datalists=$(this).next(".datalists");
-		datalists.children().remove();
-		for(i=0;i<length;i++){
-			insts="<div><span>"+$selected[i].value+"</span><img src='/tp/Public/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-			$(insts).appendTo(datalists);
-		}
-		if(length>=1){
-			datalists.show();
-		}
-	});
+		curURL='/zhengzhong/index.php/Home/Analyze';
+		curPUBLIC='/zhengzhong/Public';
 	</script>
 </body>
 </html>
