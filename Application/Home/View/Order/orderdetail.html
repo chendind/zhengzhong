@@ -6,12 +6,48 @@
 	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
 	<meta name="viewport" content="width=device-width">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>OrderDetail</title>
+	<title>OrderDetail01</title>
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/common.css">
 	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/orderdetail.css">
+	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
 </head>
-<body>
+<body data='type_doctor'>
 	<div class="title hightlight"><img src="__PUBLIC__/img/backpic.png" alt="pic" class="title_img_left"><span>订单详情</span></div>
-	<div class="content"><div class="ordermain"></div></div>
+	<div class="content">
+		<div class="ordermain">
+			<div class="omleft">
+				<p class="orderline">订单编号：<span id="oid"></span></p>
+				<p class="orderline">订单生成时间：<span id="otime"></span></p>
+				<p class="orderline">支付方式：<span id="pay"></span></p>
+				<p class="orderline">订单类型：<span id="otype"></span></p>
+			</div>
+			<div class="omright">-$1000</div>
+		</div> 
+		<div class="mybuttom">
+			<div class="orderd" data-type="typeA">
+				<p class="orderline2">咨询人: <span id="relationship"></span></p>
+				<p class="orderline2">咨询人药物过敏史:<span id="Allergies"></:span></p>
+				<p class="orderline2">咨询人慢性病史: <span id="chronic"></span></p>
+				<p class="orderline2">诊断名: <span id="diagnosis"></span></p>
+				<p class="orderline2">药物处方: <span id="medicine"></span></p>
+				<p class="orderline2">检查项目: <span id="inspect"></span></p>
+			</div>
+			<div class="doctor">
+				<div class="row">
+					<img src="" alt="head portrait">
+					<div>
+						<p>咨询师姓名：<span id="doctorname"></span></p>
+						<p>咨询师的建议： <span id="advice"></span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			console.log('should input data.');
+		});
+	</script>
 </body>
 </html>

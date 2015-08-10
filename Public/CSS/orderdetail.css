@@ -1,0 +1,61 @@
+.content{
+	min-height: 92%;
+}
+.ordermain{
+	display: table;
+	width: 100%;
+	border-bottom: 1px solid black;
+	overflow: hidden;
+}
+
+.omleft,.omright{
+	float: left;
+}
+.omleft{
+	display: table-cell;
+	width: 70%;
+}
+.omright{
+	display: table-cell;
+	margin-top: 70px;
+	width: 30%;
+	vertical-align: middle;
+	font-size: 30px;
+}
+
+.orderline{
+	text-indent: 1em;
+}
+
+/*watershed*/
+.mybuttom{ 
+	padding: 10px 1em;
+	background-color: #efefef;
+	overflow-y: auto;
+}
+.orderline2{
+	margin: 10px 0;
+}
+.orderd{
+	margin-bottom: 20px;
+}
+.doctor,.intelligence{
+	display: table;
+	width: 100%;
+	border: 1px dashed red;
+	background-color: white;
+}
+.doctor>img{
+	display: table-cell;
+	width: 34%;
+}
+div.row>div{
+	display: table-cell;
+	width: 66%;
+}
+.doctor>div.row{
+	display: table-row;
+}
+.intelligence{
+	display: block;
+}

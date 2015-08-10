@@ -40,9 +40,10 @@ $(document).ready(function(){
         }
         else{
           showmsg('已经添加成功了');
-          $("input")[1].value=null;
-          $("input:eq(1)").focus();
         }
+        $("input")[1].value=null;
+        $("input:eq(1)").focus();
+        $("#cancelorconfirm").text("取消");
       }
     }
   })
