@@ -55,6 +55,8 @@ $(document).ready(function(){
 						if(data.state=='0'){
 							console.log('success');
 							alert("验证成功");//验证码和手机号吻合。
+							window.sessionStorage.setItem('phoneNum',usrphone);
+							window.location.href="setpass.html";//跳转到设置密码的页面setpass.html
 						}
 						else{
 							console.log('phone or SecurityCode error');

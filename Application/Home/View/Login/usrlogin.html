@@ -15,8 +15,8 @@
 <body>
 	<div class="title hightlight"><img class="title_img_left" src="__PUBLIC__/img/backpic.png"><span>登陆</span></div>
 	<div class="content">
-		<div class="webinput"><input id="phoneNum" type="text" placeholder="userphone"></div>
-		<div class="webinput"><input id="password" type="password" placeholder="password"></div>
+		<div class="webinput"><input id="phoneNum" type="text" placeholder="手机号"></div>
+		<div class="webinput"><input id="password" type="password" placeholder="密码"></div>
 		<p class="tips"><a href="#">忘记密码</a></p>
 		<div class="foot_button"><button id="loginbtn" class="hightlight">登录</button></div>
 	</div>
@@ -53,13 +53,17 @@
 							console.log(data);
 							if(data.state=='0'){
 								console.log('success');
+								alert('login success.');
+								window.sessionStorage.setItem('phoneNum',usrphone);
 							}
 							else{
 								console.log('phone or pass error');
+								alert('phone or pass error');
 							}
 						},
 				error: function(){
 					console.log('network error');
+					alert('network error');
 				}
 			});
 		});//end of login.
