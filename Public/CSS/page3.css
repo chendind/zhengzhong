@@ -1,11 +1,11 @@
 .title{
-	position: absolute;
-	top: 0;
+	/*position: absolute;
+	top: 0;*/
 	border-bottom: 1px solid #ccc;
 }
 .content{
-	height: 87%;
-	margin-top: 8%;
+	height: 84%;/*
+	margin-top: 8%;*/
 	background-color: #efefef;
 }
 .result_overview img,.onerow img{
@@ -34,8 +34,9 @@
 .resultable{
 	border: none;
 	width: 100%;
-	margin: 10px 0;
+	margin: 12px 0;
 	font-size: 12px;
+	display: table;
 }
 .resultable>div.onerow{
 	display: table-row;
