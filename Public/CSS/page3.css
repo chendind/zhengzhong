@@ -9,7 +9,7 @@
 	background-color: #efefef;
 }
 .result_overview img,.onerow img{
-	mix-blend-mode: multiply;
+	/*mix-blend-mode: multiply;*/
 }/* 色彩叠加 */
 .result_overview{
 	margin: 30px 0 10px 0;
@@ -54,6 +54,7 @@
 	position: relative; 
 	width: 40%;
 	z-index: 100;
+	background: url(../img/backline.png) no-repeat center;
 }
 /*.mycol2:after{
 	content: '';
