@@ -99,4 +99,28 @@ html,body{
 	-webkit-transform: translate(-50%,-50%);
 	height: 90%;
 }
-
+/*div.results>div.resultItem>img+span
+	問題列表
+*/
+.results{
+	border: 1px dashed red;
+	width: 100%;
+	max-height: 250px;
+	padding: 2px;
+	overflow-y: auto;
+	background-color: white;
+}
+.resultItem{
+	display: table-row;
+	font-size: 14px;
+}
+.resultItem>img,.resultItem>span{
+	display: table-cell;
+	vertical-align: middle;
+}
+.resultItem>img{
+	display: inline-block;
+    height: 30px;
+    padding: 3px;
+    margin: 10px 20px;
+}

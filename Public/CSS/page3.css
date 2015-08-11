@@ -6,7 +6,11 @@
 .content{
 	height: 87%;
 	margin-top: 8%;
+	background-color: #efefef;
 }
+.result_overview img,.onerow img{
+	mix-blend-mode: multiply;
+}/* 色彩叠加 */
 .result_overview{
 	margin: 30px 0 10px 0;
 	padding: 2px;
@@ -23,7 +27,49 @@
 .result_view{
 	position: relative;
 	width: 90%;
+	height: 65%;
 	margin: 0 auto;
+}
+/*resultable用於顯示藥物連線*/
+.resultable{
+	border: none;
+	width: 100%;
+	margin: 10px 0;
+	font-size: 12px;
+}
+.resultable>div.onerow{
+	display: table-row;
+	height: 20px;
+	border: none;
+}
+.mycol,.mycol2{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+.mycol{
+	width: 30%;
+}
+.mycol2{
+	position: relative; 
+	width: 40%;
+	z-index: 100;
+}
+/*.mycol2:after{
+	content: '';
+	display: block;
+	width: 80px;
+	height: 1px;
+	position: absolute;
+	top: 10px;
+	background-color: black;
+}*/
+.onerow img{
+	height: 30px;
+	vertical-align: middle;
+}
+.onerow a{
+	text-decoration: none;
 }
 
 /* 底部导航栏 */

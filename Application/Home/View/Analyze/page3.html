@@ -25,8 +25,32 @@
 		</div>
 		<p class="result_title">您有以下药物处方或者检查项目存在问题！</p>
 		<div class="result_view">
-			<div class="astable" id="resultable"></div>
-		</div>
+			<div class="resultable">
+				<div class="onerow" datatype="pairmed">
+					<div class="mycol"><!--first column -->
+						<img src="__PUBLIC__/img/medicine.png" alt="p">
+						<span><a href="#">阿司匹林</a></span>
+					</div>
+					<div class="mycol2"><!-- second column-->
+						<img src="__PUBLIC__/img/pair.png">
+					</div>
+					<div class="mycol">  <!--last column -->
+						<img src="__PUBLIC__/img/medicine.png" alt="p">
+						<span><a href="#">巴拉巴拉</a></span>
+					</div>
+				</div><!-- end of onerow -->
+			</div><!--resultable end -->
+			<div class="results"><!--問題項目的文字描述 -->
+				<div class="resultItem"><img src="__PUBLIC__/img/pair.png" alt="pair"><span>阿司匹林和巴拉巴拉存在配伍禁忌，請注意。</span>
+				</div>
+				<div class="resultItem"><img src="__PUBLIC__/img/inspect_icon.png" alt="insicon">
+					<span>驗血爲不必要的檢查項目。</span>
+				</div>
+				<div class="resultItem"><img src="__PUBLIC__/img/med.png" alt="med">
+					<span>巴拉巴拉不適用這個藥</span>
+				</div>
+			</div>
+		</div><!--  resultview end -->
 	</div>
 	<div class="foot">
 		<div class="foot_back">

@@ -1,0 +1,14 @@
+.content{
+	height: 87%;
+	background-color: #efefef;
+	overflow-y: auto;
+}
+.olist{
+	margin-top: 10px;
+	padding: 1px 0;
+	background-color: white;
+	font-size: 14px;
+}
+.orderline{
+	margin-left: 2em;
+}
