@@ -23,11 +23,13 @@ html,body{
 }
 .title>.title_img_left{
 	left: 0;
-	height: 60%;      margin-left: 10px;
+	height: 60%;      
+	margin-left: 10px;
 }
 .title>.title_img_right{
 	right: 0;
-	height: 100%;
+	height: 60%;
+	margin-right: 10px;
 }
 .title>span{
 	position: absolute;
