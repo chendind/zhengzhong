@@ -1,0 +1,20 @@
+.content{
+	background-color: #f3f3f3;
+	min-height: 92%;
+	padding: 0 16px;
+}
+.attributes{
+	border-bottom: 1px solid #ccc;
+	padding: 1px 0; 
+}
+.attributes>h3{
+	font-weight: normal;
+	font-size: 16px;
+	margin: 8px 0;
+	color: #cb9743;
+	text-indent: -.5em;
+}
+.attributes>p{
+	font-size: 13px;
+	margin: 8px 0;
+}
