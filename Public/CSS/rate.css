@@ -1,0 +1,49 @@
+.content{
+	width: 100%;
+	min-height: 75%;
+	background-color: #f3f3f3;
+}
+.doctor{
+	width: 90%;
+	height: 120px;
+	border: none;
+	margin: 20px auto;
+	background-color: white;
+	margin-bottom: 0;
+}
+.doctor img,.doctor>div{
+	float: left;
+	margin: 10px;
+}
+.doctor>div{
+	width: auto;
+}
+.doctor>div>p:first-child{
+    margin-top: 10px;
+}
+
+/*rankstar type*/
+.rank{
+	padding: 10px 20px;
+	font-size: 14px;
+}
+.rank>p{
+	margin-bottom: 22px;
+}
+.rankstars{
+	margin: 10px 0;
+}
+.rankstars span{
+	margin-right: 20px;
+}
+.rankstars img{
+	height: 20px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+/*foot button*/
+.foot_button{
+	position: absolute;
+	top: 83%;
+}

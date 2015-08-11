@@ -13,6 +13,8 @@
 	right: 8%;
 	top: 15%;
 	padding: 5px .5em;
+	background-color: #eaeaea;
+    color: #6f6f6f;
 }
 .webinput{
 	position: relative;
@@ -32,16 +34,18 @@
 }
 /*input styles.*/
 #phoneNum{
-	background: url(../img/phonepic.png) no-repeat 10px;
+	background: url(../img/phonepic1.png) no-repeat 10px;
 }
 #password{
-	background: url(../img/passwordpic.png) no-repeat 10px;
+	background: url(../img/passwordpic1.png) no-repeat 10px;
 }
 p.tips{
 	margin: 5px 22px;
-    
 	font-size: 12px;
     text-align: right;
+}
+.tips>a{
+	color: #d0d0d0;
 }
 .foot_button{
 	margin-top: 42px;

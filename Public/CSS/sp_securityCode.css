@@ -1,5 +1,6 @@
 #phoneNum,#password,#secCode{
 	background: none;
+	color: #d0d0d0;
 }
 #phoneNum{
 	border-bottom: 1px solid rgb(238,238,238);

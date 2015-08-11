@@ -49,13 +49,16 @@
 .doctor>img{
 	display: inline-block;
 	margin-left: 10px;
-	height: 80%;
-	vertical-align: bottom;
+	height: 75%;
+	vertical-align: text-bottom;
 }
 .doctor>div{
 	display: inline-block;
 	width: 66%;
 }
 .doctor p:first-child{
-	margin-bottom: 20px;
+	margin: 20px 0;
+}
+.doctor p:last-child{
+	line-height: 1.8;
 }
