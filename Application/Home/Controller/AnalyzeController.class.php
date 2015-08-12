@@ -331,14 +331,14 @@ class AnalyzeController extends Controller {
                                    medicine_id as medicine_id,
                                    medicine_code as medicine_code,
                                    medicine_productname as medicine_productname,
-                                   medicine_approvedrugname as medicine_approvedrugname")->order('medicine_id asc')->limit('0,'.self::$maxShow)->select();
+                                   medicine_approvedrugname as medicine_approvedrugname")->order('CONVERT( medicine_productname USING gbk )')->limit('0,'.self::$maxShow)->select();
         }
         else{
             $arr= $medicine->where($condition)->field("
                                    medicine_id as medicine_id,
                                    medicine_code as medicine_code,
                                    medicine_productname as medicine_productname,
-                                   medicine_approvedrugname as medicine_approvedrugname")->select();
+                                   medicine_approvedrugname as medicine_approvedrugname")->order('CONVERT( medicine_productname USING gbk )')->select();
         }
         
         $ret=array();
@@ -424,7 +424,7 @@ class AnalyzeController extends Controller {
         for($i=0;$i<$count;$i++){
             $now=$r[$i]['auxinspect_inspect_relation_id'];
             $parent=$this->getInspectParentId($now);
-            while($parent&&$parent!='0'){
+            while($parent&&$parent!='-1'){
                 $arr[$j]=$parent;
                 $j++;
                 $parent=$this->getInspectParentId($parent);
@@ -453,6 +453,9 @@ class AnalyzeController extends Controller {
         for($i=0;$i<$count;$i++){
             
             $typeArr=$this->getInspectTypeArr('1',$inspectIdArr[$i]);
+            
+            
+           
             
             $where['auxinspect_inspect_relation_common_relationid']=array('in',$typeArr);
             if($auxinspectocommon->where($where)->find()){
@@ -494,12 +497,12 @@ class AnalyzeController extends Controller {
         
         $count=$inspect->where($condition)->count(1);
         if($count>self::$maxShow){
-            $arr=$inspect->where($condition)->order('inspect_id asc')->limit('0,'.self::$maxShow)->select();
+            $arr=$inspect->where($condition)->order('CONVERT( inspect_name USING gbk )')->limit('0,'.self::$maxShow)->select();
         }
         else{
-            $arr=$inspect->where($condition)->select();
+            $arr=$inspect->where($condition)->order('CONVERT( inspect_name USING gbk )')->select();
         }
-        
+    
         $ret=array();
         $ret['count']=$count;
         $ret['list']=$arr;
@@ -533,14 +536,14 @@ class AnalyzeController extends Controller {
                                    medicine_id as medicine_id,
                                    medicine_code as medicine_code,
                                    medicine_productname as medicine_productname,
-                                   medicine_approvedrugname as medicine_approvedrugname")->order('medicine_id asc')->limit('0,'.self::$maxShow)->select();
+                                   medicine_approvedrugname as medicine_approvedrugname")->order('CONVERT( medicine_productname USING gbk )')->limit('0,'.self::$maxShow)->select();
         }
         else{
             $arr1= $medicine->where($condition)->field("'medicine' as type,
                                    medicine_id as medicine_id,
                                    medicine_code as medicine_code,
                                    medicine_productname as medicine_productname,
-                                   medicine_approvedrugname as medicine_approvedrugname")->order('medicine_id asc')->select();
+                                   medicine_approvedrugname as medicine_approvedrugname")->order('CONVERT( medicine_productname USING gbk )')->select();
             
             $inspect=M('inspect');
             $where['inspect_name']=array('LIKE',$name);
@@ -548,12 +551,12 @@ class AnalyzeController extends Controller {
             if($count1+$count>self::$maxShow){
                 $arr2=$inspect->field("'inspect' as type,
                                    inspect_id as inspect_id,
-                                   inspect_name as inspect_name")->where($where)->order('inspect_id asc')->limit('0,'.(self::$maxShow-$count))->select();
+                                   inspect_name as inspect_name")->where($where)->order('CONVERT( inspect_name USING gbk )')->limit('0,'.(self::$maxShow-$count))->select();
             }
             else{
                 $arr2=$inspect->field("'inspect' as type,
                                    inspect_id as inspect_id,
-                                   inspect_name as inspect_name")->where($where)->select();
+                                   inspect_name as inspect_name")->where($where)->order('CONVERT( inspect_name USING gbk )')->select();
             }
             if($arr1&&$arr2)
                 $arr=array_merge($arr1,$arr2);
@@ -645,19 +648,22 @@ class AnalyzeController extends Controller {
         $arr=array();
         if(session('id')){
             
-            if(!$this->checkOrderPaied(I('post.oid'))){
+            $oid=I('post.oid');
+            
+            if(!$this->checkOrderPaied($oid)){
                 $arr['state']='10000';
                 $this->ajaxReturn($arr);
                 return;
             }
-            $relationship= $this->getOidAnalyze(I('post.oid'));
+            $relationship= $this->getOidAnalyze($oid);
             if($relationship){
                 echo $relationship;
                 return;
             }
            
             $preg='/^(0|[1-9]\d|100)$/';
-            if( !preg_match($preg,I('post.age'))){
+            $age=I('post.age');
+            if( !preg_match($preg,$age)){
                 $arr['state']='2000';
                 $this->ajaxReturn($arr);
                 return;
@@ -670,15 +676,20 @@ class AnalyzeController extends Controller {
             //$relationship='我的父母';
    
             $taboo=I('post.taboo');
-            //$taboo='妊娠,糖尿病';
+           // $taboo='妊娠,糖尿病';
             $taboo=explode(',',$taboo);
-            
+             
             $tabooIdArr=array();
             $tabooNameArr=array();
             $j=0;
-            for($i=0;$i<count($taboo);$i++){
+            
+            $tabooCount=count($taboo);
+            
+            for($i=0;$i<$tabooCount;$i++){
                 $tmpArr=$this->getTabooId($taboo[$i]);
-                if($tmpArr!=null&&count($tmpArr)==1){
+                
+                $tmpcount=count($tmpArr);
+                if($tmpArr!=null&&$tmpcount==1){
                     $tabooNameArr[$j]=$taboo[$i];
                     $tabooIdArr[$j]=$tmpArr[0];
                     $j++;
@@ -687,12 +698,13 @@ class AnalyzeController extends Controller {
             $notfound=I('post.notfound');
             //$notfound='哈哈,呵呵,笑一个';
             $notfoundArr=explode(',',$notfound);
-            
+           
             
             $notfoundArr=array();
             $notfoundArrIndex=0;
             
-            $medicine=I('post.medicine');$medicine='阿司匹林,黄连素,泰诺,红霉素眼膏';
+            $medicine=I('post.medicine');
+           // $medicine='阿司匹林,黄连素,泰诺,红霉素眼膏';
             for($i=0;$i<count($notfoundArr);$i++){
                 $a=$this->getMedicineCode($notfoundArr[$i]);
                 if($a){
@@ -737,7 +749,7 @@ class AnalyzeController extends Controller {
             }
             
             $zhenduan=I('post.zhenduan');
-            //$zhenduan='iiif';
+            $zhenduan='iiif';
             $ICDArr=array();
             $ICDArr=$this->getICDfromCommonname($zhenduan);
             if($ICDArr==null){
@@ -747,8 +759,8 @@ class AnalyzeController extends Controller {
                 
             
             $inspect=I('post.inspect');
-            //$inspect='血常规,尿常规';
-            
+           // $inspect='血常规,尿常规';
+             
             $notfoundArr=array();
             $notfoundArrIndex=0;
             for($i=0;$i<count($notfoundArr);$i++){
@@ -858,7 +870,7 @@ class AnalyzeController extends Controller {
                 }
             }
           
-          
+           
             //3、配伍禁忌
             $PairArr=array();
             $j=0;
@@ -886,10 +898,11 @@ class AnalyzeController extends Controller {
                 }
             }
             
-            
+          
             //检查项目
             
             $inspectArr=$this->checkInspect($inspectArr,$zhenduan);
+              
             $arr1=array();
             for($i=0;$i<count($inspectArr);$i++){
                 $arr1[$i]['inspectId']=$inspectArr[$i];
@@ -946,17 +959,57 @@ class AnalyzeController extends Controller {
                 }
                 
             }
+           
+            $medicine='';
+            
+            $count=count($medicineNameArr);
+            for($i=0;$i<$count;$i++){
+                if($i==0){
+                    $medicine=$medicineNameArr[$i];
+                }
+                else{
+                    $medicine=$medicine.','.$medicineNameArr[$i];
+                }
+            }
+            
+            $inspect='';
+            
+            $count=count($inspectNameArr);
+            for($i=0;$i<$count;$i++){
+                if($i==0){
+                    $inspect=$inspectNameArr[$i];
+                }
+                else{
+                    $inspect=$inspect.','.$inspectNameArr[$i];
+                }
+            }
+            
+            $taboo='';
+            
+            $count=count($tabooNameArr);
+            for($i=0;$i<$count;$i++){
+                if($i==0){
+                    $taboo=$tabooNameArr[$i];
+                }
+                else{
+                    $taboo=$taboo.','.$tabooNameArr[$i];
+                }
+            }
+            
+           
+            
             
             $autoanalyzerecord=M('autoanalyzerecord');
             $addData['autoanalyzerecord_uid']=session('id');
             $addData['autoanalyzerecord_time']=time();
-            $addData['autoanalyzerecord_relationship']=I('post.relationship');
-            $addData['autoanalyzerecord_medicine']=I('post.medicine');
-            $addData['autoanalyzerecord_inspect']=I('post.inspect');
-            $addData['autoanalyzerecord_zhenduan']=I('post.zhenduan');
-            $addData['autoanalyzerecord_notfound']=I('post.notfound');
-            $addData['autoanalyzerecord_taboo']=I('post.taboo');
-            $addData['autoanalyzerecord_age']=I('post.age');
+            $addData['autoanalyzerecord_relationship']=$relationship;
+            $addData['autoanalyzerecord_medicine']=$medicine;
+            $addData['autoanalyzerecord_inspect']=$inspect;
+            $addData['autoanalyzerecord_zhenduan']=$zhenduan;
+            $addData['autoanalyzerecord_notfound']=$notfound;
+            $addData['autoanalyzerecord_taboo']=$taboo;
+            $addData['autoanalyzerecord_age']=$age;
+            $addData['autoanalyzerecord_orderid']=$oid;
             
             $rrresult=$arr;
             $rrrjson=array();
@@ -967,11 +1020,8 @@ class AnalyzeController extends Controller {
             $rrresult=urldecode($rrresult);
             
             $addData['autoanalyzerecord_result']= $rrresult;   
-            $addData['autoanalyzerecord_orderid']=I('post.oid');
             $autoanalyzerecord->add($addData);
-            
-            
-            
+        
             if($notfound!=''){
                 $notfoundArr=explode(',',$notfound);
                 for($i=0;$i<count($notfoundArr);$i++)
@@ -987,8 +1037,26 @@ class AnalyzeController extends Controller {
     
     
     
-    
-    
+    /** 
+    * 函数 gettaboolist,得到禁忌症列表
+    * 
+    * 得到禁忌症列表
+    * @return irritability  禁忌症
+    *         others        其他
+    */ 
+    public function gettaboolist(){
+        $taboo=M('taboo');
+        $where['taboo_type']='过敏';
+        $arr['irritability']=$taboo->where($where)->field(array('taboo_id',
+                                                                'taboo_name',
+                                                                'taboo_type'))->order('CONVERT( taboo_name USING gbk )')->select();
+        $where['taboo_type']=array('neq','过敏');
+        $where['taboo_name']=array('not in',array('孕妇','婴幼儿'));
+        $arr['others']=$taboo->where($where)->field(array('taboo_id',
+                                                                'taboo_name',
+                                                                'taboo_type'))->order('CONVERT( taboo_name USING gbk )')->select();
+        $this->ajaxReturn($arr);
+    }
     
    
     

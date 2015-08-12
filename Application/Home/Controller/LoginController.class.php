@@ -172,7 +172,7 @@ class LoginController extends Controller {
                         $useroption['username']=$a.'';
                         $useroption['password']=md5($password);
                         
-                        $easemob->accreditRegister($groupId);
+                        $easemob->accreditRegister($useroption);
                     }   
                     else
                     {
@@ -296,10 +296,30 @@ class LoginController extends Controller {
                 $User=M("user");
                 $savedate["user_password"]=$password;
                 $conditionv["user_phone"]=$phone;
+                
+                $orinUser=$User->where($conditionv)->find();
+                
                 $a=$User->where($conditionv)->save($savedate);
                 if($a)
                 {
                     $arr['state']='0';//修改密码成功
+                    
+                    require('easemob.class.php');
+                    $options=array();
+                    $options['client_id']=self::$client_id;
+                    $options['client_secret']=self::$client_secret;
+                    $options['org_name']=self::$org_name;
+                    $options['app_name']=self::$app_name;
+		
+                    $easemob=new \easemob($options);
+                        
+                    $useroption['username']=$orinUser['user_id'].'';
+                    $useroption['password']=md5($orinUser['user_password']);
+                    $useroption['newpassword']=md5($password);
+                        
+                    $easemob->editPassword($useroption);
+                    
+                    
                 }
                 else
                 {
@@ -340,6 +360,24 @@ class LoginController extends Controller {
                   if($exe)
                   {
                     $arr["state"]='0';//修改密码成功
+                    
+                    require('easemob.class.php');
+                    $options=array();
+                    $options['client_id']=self::$client_id;
+                    $options['client_secret']=self::$client_secret;
+                    $options['org_name']=self::$org_name;
+                    $options['app_name']=self::$app_name;
+		
+                    $easemob=new \easemob($options);
+                        
+                    $useroption['username']=$uid.'';
+                    $useroption['password']=md5($oldPass);
+                    $useroption['newpassword']=md5($newPass);
+                        
+                    $easemob->editPassword($useroption);
+                    
+                    
+                    
                   }
                   else
                   {

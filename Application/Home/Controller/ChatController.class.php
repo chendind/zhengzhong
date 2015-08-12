@@ -22,6 +22,32 @@ class ChatController extends Controller{
     private static $app_name='jieyao';
     
     
+    
+    /** 
+    * 函数listdepartment,列出科室列表
+    * 
+    * 列出科室列表
+    * 
+    * @return json
+    */ 
+    public function listdepartment(){
+	$arr=array();
+	$keshi=M('keshi');
+
+	$arr['customservice']=$keshi
+	    ->field('keshi_name as customservice_department,keshi_descri')
+	    ->order('CONVERT( keshi_name USING gbk )')
+	    ->select();
+	    
+	$Setting=M('setting');
+	$where['setting_name']='money_doctor';
+	$arr['price']=$Setting->where($where)->getField('setting_values');
+	    
+	$this->ajaxReturn($arr);
+    }
+    
+    
+    
     /** 
     * 函数listcustomerservice,列出客服列表
     * 
@@ -34,7 +60,7 @@ class ChatController extends Controller{
 	$customservice=M('customservice');
 	$where['customservice_department']=array('in',array('诊后调节','投诉与建议'));
 	$arr['customservice']=$customservice->where($where)
-	    ->field('customservice_id,customservice_nickname,customservice_state,customservice_department,customservice_image')
+	    ->field('customservice_id,customservice_nickname,customservice_state,customservice_department,customservice_image,customservice_ismale')
 	    ->order('customservice_state desc,rand() asc')
 	    ->select();
 	$this->ajaxReturn($arr);
@@ -52,7 +78,7 @@ class ChatController extends Controller{
         $OrderWhere['order_id']=$oid;
         $OrderWhere['order_uid']=session('id');
         $OrderWhere['order_state']='1';
-        $OrderWhere['order_type']='1';
+        $OrderWhere['order_type']=array('in','1,2');
         if($Order->where($OrderWhere)->find()){
             return true;
         }
@@ -224,6 +250,10 @@ class ChatController extends Controller{
 	    $customservice_conversation=M('customservice_conversation');
 	    $where['customservice_conversation_uid']=session('id');
 	    $where['customservice_conversation_state']=0;
+	    
+	    
+	    
+	    
 	    $arr['count']=$customservice_conversation->where($where)->count();
 	    $arr['list']=$customservice_conversation->where($where)->order('customservice_conversation_id desc')->select();
 	    if($arr['list']){
@@ -238,6 +268,42 @@ class ChatController extends Controller{
     }
     
     /** 
+    * 函数 listunrateconversations,列出未评分会话列表
+    * 列出未评分会话列表
+    * @return 
+    */ 
+    public function listunrateconversations(){
+	if(!session('id')){
+	    $arr['state']='2001';
+	}
+	else{
+	    $customservice_conversation=M('customservice_conversation');
+	    $where['customservice_conversation_uid']=session('id');
+	    $where['customservice_conversation_state']=1;
+	    
+	    if(I('get.gid')){
+		$where['customservice_conversation_id']=I('get.gid');
+	    }
+	    if(I('post.gid')){
+		$where['customservice_conversation_id']=I('post.gid');
+	    }
+	    
+	    $arr['count']=$customservice_conversation->where($where)->count();
+	    $arr['list']=$customservice_conversation->where($where)->order('customservice_conversation_id desc')->select();
+	    if($arr['list']){
+		for($i=0;$i<count($arr['list']);$i++){
+		    $arr['list'][$i]['csdetail']=$this->getCSdetail($arr['list'][$i]['customservice_conversation_csid']);
+		}
+	    }
+	    
+	    $arr['state']='0';
+	}
+	$this->ajaxReturn($arr);
+    }
+    
+    
+    
+    /** 
     * 函数 getCSdetail,得到客服信息
     * 列出会话列表
     * @param string 客服编号
@@ -246,7 +312,12 @@ class ChatController extends Controller{
     private function getCSdetail($customservice_conversation_csid){
 	$customservice=M('customservice');
 	$where['customservice_id']=$customservice_conversation_csid;
-	return $customservice->where($where)->find();
+	return $customservice->field(array('customservice_id',
+					   'customservice_nickname',
+					   'customservice_state',
+					   'customservice_department',
+					   'customservice_image',
+					   'customservice_ismale'))->where($where)->find();
     }
     
     
@@ -315,5 +386,75 @@ class ChatController extends Controller{
     
     
     
+    
+     /** 
+    * 函数 getuserphone($id),得到手机号
+    * 得到手机号
+    * @param string 用户id(get.id)
+    * @return 
+    */
+    public function getuserphone($id){
+	if($id){
+	    $User=M('user');
+	    $uwhere['user_id']=$id;
+	    $arr['phone']=$User->where($uwhere)->getField('user_phone');
+	    $arr['state']='0';
+	}
+	else{
+	    $arr['state']='30001';
+	}
+	$this->ajaxReturn($arr);
+    }
+    
+     /** 
+    * 函数 getgroupphone($id),得到手机号
+    * 得到手机号
+    * @param string 群组id(get.id)
+    * @return 
+    */
+    public function getgroupphone($id){
+	if($id){
+	    $customservice_conversation=M('customservice_conversation');
+	    $cwhere['customservice_conversation_id']=$id;
+	    $arr['uid']=$customservice_conversation->where($cwhere)->getField('customservice_conversation_uid');
+	    $User=M('user');
+	    $uwhere['user_id']=$arr['uid'];
+	    $arr['phone']=$User->where($uwhere)->getField('user_phone');
+	    $arr['state']='0';
+	}
+	else{
+	    $arr['state']='80000';
+	}
+	$this->ajaxReturn($arr);
+    }
+    
+    
+    
+    public function testdelete(){
+	$customservice_conversation=M('customservice_conversation');
+	$where['customservice_conversation_state']=0;
+	$list=$customservice_conversation->where($where)->select();
+	 require('easemob.class.php');
+	 $options=array();
+	$options['client_id']=self::$client_id;
+	$options['client_secret']=self::$client_secret;
+	$options['org_name']=self::$org_name;
+	$options['app_name']=self::$app_name;
+	 $easemob=new \easemob($options);
+	for($i=0;$i<count($list);$i++){
+	    $gid=$list[$i]['customservice_conversation_id'];
+	    
+	    $where['customservice_conversation_id']=$gid;
+	    $savedata['customservice_conversation_state']=1;
+	    $customservice_conversation->where($where)->save($savedata);
+	    
+	   
+	
+		
+	
+	    $easemob->deleteGroups($gid);
+	}
+	echo 'success';
+    }
     
 }
