@@ -23,8 +23,8 @@ html,body{
 }
 .title>.title_img_left{
 	left: 0;
-	height: 60%;      
-	margin-left: 10px;
+	height: 40%;      
+	margin-left: 20px;
 }
 .title>.title_img_right{
 	right: 0;

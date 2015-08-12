@@ -1,6 +1,6 @@
 .content{
 	width: 100%;
-	min-height: 75%;
+	min-height: 65%;
 	background-color: #f3f3f3;
 }
 .doctor{
@@ -46,4 +46,11 @@
 .foot_button{
 	position: absolute;
 	top: 83%;
+	left: 5%;
+	width: 90%;
+}
+.foot_button>button{
+	width: 100%;
+    line-height: 1.8;
+    font-size: 20px;
 }
