@@ -46,11 +46,12 @@
 .foot_button{
 	position: absolute;
 	top: 83%;
-	left: 5%;
-	width: 90%;
+	bottom: 56px;
+	height: 45px;
 }
-.foot_button>button{
-	width: 100%;
-    line-height: 1.8;
-    font-size: 20px;
+.foot_button>span{
+	width: 90%;
+    line-height: 45px;
+    font-size: 20px;;
+    margin-left: 5%
 }

@@ -34,17 +34,7 @@
 .warning{
 	border: 2px solid #f00;
 }
-.foot_button{
-	/* height: 190px; */
-	margin-top: 42px;
-	background-color: white;
-	/* line-height: 190px; */
-}
-.foot_button>button{
-	margin-left: 25%;
-	width: 50%;
-	line-height: 2;
-}
+
 
 .autoset{
 	font-size: 4.1vw;
@@ -91,9 +81,7 @@
 	vertical-align: middle;
 	max-height: 19.5vh;
 }
-button{
-	font-size: 20px;
-}
+
 .autoset{
 	margin-left: 5%;
 }

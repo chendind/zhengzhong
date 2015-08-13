@@ -53,15 +53,18 @@ p.tips{
 	margin: 30px auto;
 	margin-bottom: 0;
 	height: 45px;
-	width: 90%;
+	width: 100%;
     font-size: 22px;
     line-height: 45px;
 }
-.foot_button>button{
-	margin-left: 25%;
-    width: 50%;
-    line-height: 2;
+
+.foot_button>span{
+	width: 90%;
+    line-height: 45px;
+    font-size: 20px;;
+    margin-left: 5%
 }
+
 #confirm{
 	margin-top: 50px;
 }

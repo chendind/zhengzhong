@@ -176,3 +176,17 @@ div.footItem[data='zz_msg']::after{
     padding: 3px;
     margin: 10px 20px;
 }
+
+/* 长得像button的框 */
+.foot_button{
+	width: 100%;
+	margin-top: 42px;
+	background-color: white;
+}
+.foot_button>span{
+	display: inline-block;
+	margin-left: 25%;
+	width: 50%;
+	/*line-height: 2;*/
+	font-size: 20px;
+}
