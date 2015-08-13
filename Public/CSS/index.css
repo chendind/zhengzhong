@@ -1,0 +1,47 @@
+.usrpic{
+	text-align: center;
+	line-height: 1.8;
+	padding: 15px 0;
+	font-size: 14px;
+}
+.usrpic>img{
+	width: 90px;
+}
+.content{
+	background-color: #f3f3f3;
+	top: -1px;
+}
+.listview{
+	margin-top: 10px;
+	font-size: 14px;
+}
+.listItem{
+	position: relative;
+	margin-bottom: 1px;
+	padding: 3px 1em;
+	background-color: white;
+	line-height: 2.2;
+}
+
+.listicon{
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.nextPage{
+	position: absolute;
+	top: 9px;
+	right: 0;
+	margin-right: 20px;
+	height: 18px;
+}
+.foot_button{
+	width: 90%;
+	margin: 30px auto;
+	padding: 10px 0;
+	font-size: 20px;
+}
+.foot_button>span{
+	display: inline-block;
+	width: 90%;
+}

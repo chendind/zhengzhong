@@ -28,8 +28,8 @@ html,body{
 }
 .title>.title_img_right{
 	right: 0;
-	height: 60%;
-	margin-right: 10px;
+	height: 40%;
+	margin-right: 20px;
 }
 .title>span{
 	position: absolute;

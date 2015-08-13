@@ -48,12 +48,13 @@
 }
 .doctor>img{
 	display: inline-block;
-	margin-left: 10px;
-	height: 75%;
-	vertical-align: text-bottom;
+	float: left;
+	margin: 20px 0 10px 10px;
+	width: 80px;
 }
 .doctor>div{
 	display: inline-block;
+	float: right;
 	width: 66%;
 }
 .doctor p:first-child{
