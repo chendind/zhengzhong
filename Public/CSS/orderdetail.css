@@ -1,10 +1,11 @@
 .content{
 	min-height: 92%;
+	
+	overflow-x: hidden;
 }
 .ordermain{
 	display: table;
 	width: 100%;
-	border-bottom: 1px solid black;
 	overflow: hidden;
 }
 
@@ -14,13 +15,15 @@
 .omleft{
 	display: table-cell;
 	width: 70%;
+	/*white-space:nowrap;*/
 }
 .omright{
 	display: table-cell;
 	margin-top: 70px;
 	width: 30%;
 	vertical-align: middle;
-	font-size: 30px;
+	font-size: 25px;
+	color: #cb9741;
 }
 
 .orderline{
@@ -30,13 +33,14 @@
 /*watershed*/
 .mybuttom{ 
 	padding: 10px 1em;
-	background-color: #efefef;
+	background-color: #f3f3f3;
 	overflow-y: auto;
 }
 .orderline2{
 	margin: 10px 0;
 }
 .orderd{
+	/*white-space:nowrap;*/
 	margin-bottom: 20px;
 }
 .doctor{
@@ -59,7 +63,23 @@
 }
 .doctor p:first-child{
 	margin: 20px 0;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+    overflow:hidden;
 }
 .doctor p:last-child{
 	line-height: 1.8;
+	height: 50.4px;
+}
+.orderline,.orderline2{
+	white-space:nowrap;
+	text-overflow: ellipsis;
+    overflow:hidden;
+}
+.twoLine{
+	text-overflow: ellipsis;
+    overflow:hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }

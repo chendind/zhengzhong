@@ -4,11 +4,16 @@
 	overflow-y: auto;
 }
 .olist{
-	margin-top: 10px;
+	margin-top: 21px;
 	padding: 1px 0;
 	background-color: white;
 	font-size: 14px;
 }
 .orderline{
 	margin-left: 2em;
+}
+.orderline,.orderline2{
+	white-space:nowrap;
+	text-overflow: ellipsis;
+    overflow:hidden;
 }

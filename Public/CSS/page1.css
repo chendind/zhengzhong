@@ -8,8 +8,9 @@
 .box{
 	display: inline-block;
 	padding: 0;
-	line-height: 1.9;
+	line-height: 30px;
 	float: left;
+	height: 30px;
 }
 
 .title_p{
@@ -45,14 +46,10 @@
 	line-height: 2;
 }
 
-.small_input{
-	width: 24.4%;
-}
 .autoset{
-	/*font-size: 31px;*/
 	font-size: 4.1vw;
-	max-height: 4.5vw;
-	max-width: 50vw;
+	height: 21px;
+    width: 100px;
 }
 .box{
 	margin-bottom: 10px;
@@ -101,7 +98,7 @@ button{
 	margin-left: 5%;
 }
 .tables>p{
-	font-size: 15px;
+	font-size: 18px;
 	margin: 4.2vw 0 2.5vw 0;
 }
 .astable,.astable>div{
@@ -111,4 +108,7 @@ button{
 }
 input{
 	text-align: center;
+}
+.small_input{
+	width: 67px;
 }

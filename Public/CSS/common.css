@@ -31,6 +31,19 @@ html,body{
 	height: 40%;
 	margin-right: 20px;
 }
+div.title[data='mail_msg']::after{
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 5px;
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	margin-right: 20px;
+	background-color: red;
+	z-index: 102;
+}
 .title>span{
 	position: absolute;
 	top: 50%;
@@ -85,6 +98,8 @@ html,body{
 .astable>div{
 	border-top: 1px solid #00f;
 	min-height: 20%;
+	height: 32px;
+	line-height: 32px;
 }
 .astable{
 	border: 1px solid #00f;
@@ -99,13 +114,13 @@ html,body{
 	top: 50%;
 	transform: translate(-50%,-50%);
 	-webkit-transform: translate(-50%,-50%);
-	height: 90%;
+	height: 20px;
 }
 /*div.results>div.resultItem>img+span
 	問題列表
 */
 .results{
-	border: 1px dashed red;
+	border: 1px dashed #cb9741;
 	width: 100%;
 	max-height: 250px;
 	padding: 2px;

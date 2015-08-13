@@ -15,7 +15,8 @@
 /* 以下是输入框样式 */
 .web_input{ 
 	width: 90%;
-	line-height: 1.5;
+	line-height: 29px;
+	height: 29px;
 	margin: 0 2px;
 	text-align: inherit;
 }
@@ -69,7 +70,7 @@ div,p,button,h1,input{
 
 .smallType{
 	font-size: 12px;
-	margin: 0 0 30px 0;
+	margin: 10px 0 30px 0;
 }
 /* .title是某些页面的顶部栏样式
  * 它下面的盒子需要适当减少上边距*/
@@ -123,7 +124,6 @@ div.tableAdjust{
 	position: absolute;
 	right: 0;
 	top: 48%;
-	height: 80%;
 }
 
 .addSpan{
@@ -186,4 +186,7 @@ div.msgalerted{
 	background-color: #ccc;
 	display: none;
 	z-index: 102;
+}
+.content>h1{
+	margin-top: 0;
 }
