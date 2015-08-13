@@ -1,0 +1,20 @@
+.content{
+	height: 92%;
+}
+.usrpic{
+	line-height: 194px;
+	height: 194px;
+	background-color: white;
+}
+.usrpic>img{
+	height: 116px;
+	vertical-align: middle;
+}
+.listItem{
+	padding: 0 31px;
+	font-size: 16px;
+}
+.listview{
+	margin: 0;
+	margin-top: 1px;
+}

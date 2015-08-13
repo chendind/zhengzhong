@@ -2,25 +2,25 @@
 	text-align: center;
 	line-height: 1.8;
 	padding: 15px 0;
-	/*font-size: 14px;*/
+	font-size: 15px;
 }
 .usrpic>img{
-	width: 90px;
+	height: 82px;
 }
 .content{
 	background-color: #f3f3f3;
 	top: -1px;
 }
 .listview{
-	margin-top: 10px;
+	margin-top: 22px;
 	font-size: 14px;
 }
 .listItem{
 	position: relative;
 	margin-bottom: 1px;
-	padding: 3px 1em;
+	padding: 0 1em;
 	background-color: white;
-	line-height: 2.2;
+	line-height: 45px;
 }
 
 .listicon{
@@ -30,10 +30,10 @@
 }
 .nextPage{
 	position: absolute;
-	top: 9px;
+	top: 14px;
 	right: 0;
 	margin-right: 20px;
-	height: 18px;
+	height: 17px;
 }
 .foot_button{
 	width: 90%;
