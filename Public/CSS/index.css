@@ -10,6 +10,7 @@
 .content{
 	background-color: #f3f3f3;
 	top: -1px;
+	height: 84%;
 }
 .listview{
 	margin-top: 22px;
@@ -36,10 +37,12 @@
 	height: 17px;
 }
 .foot_button{
-	width: 90%;
-	margin: 30px auto;
-	padding: 10px 0;
-	font-size: 20px;
+	position: absolute;
+    width: 90%;
+    bottom: 27px;
+    margin: 0 5%;
+    padding: 10px 0;
+    font-size: 20px;
 }
 .foot_button>span{
 	display: inline-block;

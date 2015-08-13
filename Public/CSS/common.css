@@ -38,10 +38,11 @@ div.title[data='mail_msg']::after{
 	border-radius: 5px;
 	position: absolute;
 	display: block;
-	top: 8px;
-	right: -4px;
+	top: 30%;
+	right: 0;
 	margin-right: 20px;
 	background-color: red;
+	-webkit-transform: translate(50%,-50%);
 }
 .title>span{
 	position: absolute;
@@ -62,8 +63,42 @@ div.title[data='mail_msg']::after{
 }
 /*foot 是底下的导航栏样式*/
 .foot{
-	height: 7.3%;
-	border-top: 1px solid #ccc;
+	height: 49px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: white;
+	padding: 4px 0 2px 0;
+	color: #c8aa9e;
+}
+.footItem{
+	position: relative;
+	float: left;
+	width: 25%;
+	height: 100%;
+	text-align: center;
+	font-size: 12px;
+	line-height: 1.2;
+}
+.footItem>img{
+	height: 29px;
+}
+div.footItem[data='zz_msg']::after{
+	content: '';
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	margin-right: 15%;
+	background-color: red;
+	/*-webkit-transform: translate(50%,-50%);
+*/
+}
+.current{
+	color: #cb9741;
 }
 
 .hightlight, .box, .foot_box, .result_title{
@@ -99,6 +134,7 @@ div.title[data='mail_msg']::after{
 	min-height: 20%;
 	height: 32px;
 	line-height: 32px;
+	padding: 2px 0 2px 10px;
 }
 .astable{
 	border: 1px solid #00f;
@@ -109,10 +145,10 @@ div.title[data='mail_msg']::after{
 .deleteProject{
 	display: inline-block;
 	position: absolute;
-	right: 0;
-	top: 50%;
-	transform: translate(-50%,-50%);
-	-webkit-transform: translate(-50%,-50%);
+	right: 6px;
+	top: 6px;
+	/*transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);*/
 	height: 20px;
 }
 /*div.results>div.resultItem>img+span
