@@ -1,0 +1,40 @@
+body{
+	overflow: auto;
+}
+p{
+	margin: 0;
+}
+
+.letter{
+	height: 100px;
+	padding: 24px 22px 0 22px;
+	background-color: #f3f3f3;
+	border-bottom: 1px solid #c7c7c7;
+}
+.letter_title{
+	position: relative;
+	font-size: 19px;
+}
+.letter_title>span{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	font-size: 12px;
+}
+.letter_brief{
+	margin-top: 26px;
+	font-size: 15px;
+	white-space:nowrap;
+	text-overflow: ellipsis;
+    	overflow:hidden;
+    	color: #828282;
+}
+.letter[state="unread"]>.letter_title{
+	color: #4a4a4a;
+}
+.letter[state="unread"] span{
+	color: #cb9640;
+}
+.letter[state="read"]{
+	color: #828282;
+}

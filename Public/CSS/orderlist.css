@@ -15,5 +15,5 @@
 .orderline,.orderline2{
 	white-space:nowrap;
 	text-overflow: ellipsis;
-    overflow:hidden;
+    	overflow:hidden;
 }
