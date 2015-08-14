@@ -1,129 +1,76 @@
-/* 以下是类似于table的一串带边框的div
- * 子元素中的div都是连着的，个数可以自己定*/
-/*.astable>:first-child{
-	border-top-style: none;
+.content{
+	padding-top: 25px;
+	width: 100%;
+	height: 84%;
+	background-color: #f3f3f3;
 }
-.astable>div{
-	border-top: 1px solid #00f;
-	min-height: 20%;
+.content>*{
+	margin-left: 5%;
 }
-.astable{
-	border: 1px solid #00f;
-	border-top-style: none;
-}*/
 
-/* 以下是输入框样式 */
 .web_input{ 
 	width: 90%;
 	line-height: 29px;
 	height: 29px;
-	margin: 0 2px;
 	text-align: inherit;
+	color: #cecece;
+	text-indent: 1em;
 }
-::-webkit-input-placeholder,.addProject { 
-	color:#ccc; 
+.inputnew{
+	width: 70%;
 }
-.specialInput{
-	border: none;
-	text-align: inherit;
-}
-/*.specialInput:focus{
-	border: 1px solid #00f;
+/*::-webkit-input-placeholder ,.tableAdjust span{ 
+	color:#828282; 
 }*/
-.small_input{
-	width: 30%;
+
+.addProject{
+	color: #9b9b9b;
 }
 
-/* datalist备用的框的样式 */
-/*.datalists{
-	display: none;
-	position: absolute;
-	max-height: 400px;
-	width: 89%;
-	background-color: white;
-	overflow-x: hidden;
-	overflow-y: auto;
-	z-index: 100;
-}*/
-body{
-	margin: 0;
-}
-.new_add{
-	padding-left: 5px;
-}
-/*  以下是底部提交按钮区域  */
-.foot_button{
-	/* margin-top: 200px; */
-	width: 100%;
-}
-.foot_button>button{
-	margin-left: 25%;
-	width: 50%;
-	line-height: 2;
-}
-
-/* 设置字体样式 */
-div,p,button,h1,input{
+h1{
 	font-size: 16px;
 	font-weight: normal;
 }
 
 .smallType{
 	font-size: 12px;
-	margin: 10px 0 30px 0;
-}
-/* .title是某些页面的顶部栏样式
- * 它下面的盒子需要适当减少上边距*/
-div.title{
-	margin-bottom: 25px;
-	line-height: 2.42em;
-}
-.title>div{
-	position: absolute;
-	display: inline-block;
-	/* width: 150px; */
+	margin-top: 10px;
+	margin-bottom: 30px;
 }
 
-/* .tableAdjust会生成一个有最大高度的
- *  盒子 如果一行内有两行对齐的文字需
- *  要加个内联块状的div*/
-div.tableAdjust{
-	width: 90%;
-	max-height: 600px;
-	/* overflow-y: auto; */
-	/* overflow-x: hidden; */
-	padding: 5px;
-}
-.tableAdjust>div{
-	height: 25px;
+/* 数据呈现部分 */
+.tableAdjust>div,.new_add,.datalist>div{
 	position: relative;
-	/* border-bottom: 1px solid #ccc; */
+	width: 94%;
+	height: 47px;
+	line-height: 47px;
+	border-bottom: 1px solid #ccc; 
 	padding: 2px 0 2px 0;
 }
-.tableAdjust img, .tableAdjust>div>div, .tableAdjust span, .tableAdjust input{
-	margin-left: 0.9em;
+.new_add{
+	width: 90%;
+}
+.datalist>div{
+	width: 100%;
+}
+.tableAdjust img{
+	margin-left: 0.5em;
 	vertical-align: middle;
 }
-.tableAdjust img:first-child{
-	height: 100%;
-}
+
 .tableAdjust img{
 	display: inline-block;
 }
-.tableAdjust>div>div{
-	display: inline-block;
-	line-height: 40px;
-}
 
 /* 主要显示的部分*/
-.content{
-	margin: 0 5%;
-}
 
 .deleteProject{
 	position: absolute;
 	right: 0;
-	top: 48%;
+	top: 0;
+	height: 20px;
+	margin-right: 20px;
+	margin-top: 16px;
 }
 
 .addSpan{
@@ -146,13 +93,15 @@ div.tableAdjust{
 	border: 2px solid #f00;
 }
 
-#addPic{
+#addPic,.tableAdjust img:first-child{
 	display: inline-block;
-	height: 25px;
-	margin-left: 0.9em;
-    vertical-align: middle;
+	height: 34px;
+	margin: 0 23px 0 15px;
+                vertical-align: middle;
 }
-
+.addProject,tableAdjust span{
+	font-size: 18px;
+}
 .new_input_board{
 	position: absolute;
 	top: 0;
@@ -168,10 +117,7 @@ div.tableAdjust{
 	background-color: white;
 	position: relative;
 }
-/*.selected{
-	background-color: black;
-	color: white;
-}*/
+
 #cancelorconfirm{
 	margin-left: 20px;
 }
@@ -189,4 +135,20 @@ div.msgalerted{
 }
 .content>h1{
 	margin-top: 0;
+}
+
+#zdm{
+	display: block;
+}
+
+
+.foot_button{
+    bottom: 0;
+    width: 100%;
+    margin: 20px 0 4px 0;
+    padding: 20px 0;
+}
+.foot_button>span{
+	width: 200px;
+    margin: 0 auto;
 }

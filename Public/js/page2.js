@@ -14,7 +14,7 @@ $(document).ready(function(){
         $("#cancelorconfirm").html("取消");
       }
       clearTimeout(timeId);
-      $(".datalists:eq("+index+")").children().remove();
+      $(".datalist:eq("+index+")").children().remove();
       timeId=setTimeout(timeOut(index),500);
     });
   });
@@ -26,8 +26,8 @@ $(document).ready(function(){
     else{
       //用户手动输入项的输入
       var itemName=$("input")[1].value;
-      var datalists=$("div.datalists:eq(1)>div:contains("+itemName+")");//第二个候选框
-      if(datalists.length==0){
+      var datalist=$("div.datalist:eq(1)>div:contains("+itemName+")");//第二个候选框
+      if(datalist.length==0){
         //这个项目并没有相近的候选项，类别为notfound
         var alreadyInputs=$("div.tableAdjust>div:contains("+itemName+")");
         if(alreadyInputs.length==0){//已添加的项目中也没有这条记录
@@ -56,8 +56,8 @@ $(document).ready(function(){
     //alert(e.keyCode);
   });
 
-  /*从datalists中选中了某个行,datalists是后台获得的备选列表*/
-  $(".datalists").each(function(index,element){
+  /*从datalist中选中了某个行,datalist是后台获得的备选列表*/
+  $(".datalist").each(function(index,element){
     $(element).click(function(e){
       if(index==1){//药品名和检查项目的备选列表
         //选中高亮所选的框
@@ -99,8 +99,8 @@ $(document).ready(function(){
   });
 
   // $(document).click(function(event){
-  //   if($(event.target).parents(".datalists").size()==0){
-  //     $(".datalists").hide();
+  //   if($(event.target).parents(".datalist").size()==0){
+  //     $(".datalist").hide();
   //   }
   // });
 
@@ -181,12 +181,12 @@ $(document).ready(function(){
   });
 
   $(".foot_button").click(function(){
-    if(!$(".web_input")[0].value){
+    if(!$("input")[0].value){
       console.log('no diagnosis name');
       return false;
     }
     var sessions=window.sessionStorage;
-    sessions.setItem("diagnosis",$(".web_input")[0].value);//检查诊断名
+    sessions.setItem("diagnosis",$("input")[0].value);//检查诊断名
     // if(sessions.getItem("oid")==null){
     //   console.log('no oid');
     // }
@@ -229,8 +229,8 @@ function timeOut(index){
                   }
                 }
               }
-              $(options).appendTo($(".datalists:eq("+index+")"));
-              $(".datalists:eq("+index+")").show();
+              $(options).appendTo($(".datalist"));
+              $(".datalist").show();
               $("p.hidedom").hide();
             }
           }
@@ -238,6 +238,7 @@ function timeOut(index){
               //console.log('no ret');
               if(index==1){
                 $("p.hidedom").show();
+                $(".datalist").hide();
               }
           }
        }, 

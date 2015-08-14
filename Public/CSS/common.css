@@ -83,7 +83,7 @@ div.title[data='mail_msg']::after{
 .footItem>img{
 	height: 29px;
 }
-div.footItem[data='zz_msg']::after{
+div.footItem[data='foot_msg']::after{
 	content: '';
 	width: 10px;
 	height: 10px;
@@ -92,10 +92,8 @@ div.footItem[data='zz_msg']::after{
 	display: block;
 	top: 0;
 	right: 0;
-	margin-right: 15%;
+	margin-right: 18%;
 	background-color: red;
-	/*-webkit-transform: translate(50%,-50%);
-*/
 }
 .current{
 	color: #cb9741;
@@ -119,26 +117,25 @@ div.footItem[data='zz_msg']::after{
 .datalists{
 	display: none;
 	position: absolute;
-	max-height: 400px;
+	max-height: 90vh;
 	width: 89%;
 	background-color: white;
 	overflow-x: hidden;
 	overflow-y: auto;
 	z-index: 100;
 }
-.astable>:first-child{
-	border-top-style: none;
-}
+
 .astable>div{
-	border-top: 1px solid #00f;
-	min-height: 20%;
+	margin: 1px 0;
 	height: 32px;
 	line-height: 32px;
 	padding: 2px 0 2px 10px;
+	background-color: white;
 }
 .astable{
-	border: 1px solid #00f;
-	border-top-style: none;
+	margin: 2px;
+	padding: 1px;
+	background-color: blue;
 }
 
 /****************/
@@ -192,6 +189,6 @@ div.footItem[data='zz_msg']::after{
 	background-color: white;
 }
 .foot_button>span{
-	display: inline-block;
+	display: block;
 	width: 100%;
 }

@@ -21,31 +21,20 @@
 	
 	<div class="content">
 		<h1>查询人的诊断名</h1>
-		<div>
-			<input type="text" list="dlsearch" 
-			class="web_input" placeholder="请输入医生为查询人开出的诊断名">
-			<div class="datalists astable" id="datalist01"></div>
-		</div>
-		
+		<input id="zdm" type="text" class="web_input" placeholder="请输入医生为查询人开出的诊断名">
 		<p class="smallType">Tips: 若不知道诊断名，请前往人工咨询</p>
 		<p>查询人的药物处方和检查项目：</p>
 		<div class="new_add">
 			<img src="__PUBLIC__/img/addpic.png" alt="添加" id="addPic">
-			<span class="addProject specialInput">添加项目</span>
+			<span class="addProject">添加项目</span>
 		</div>
-		<div class="tableAdjust">
-			<!-- <div>
-				<img src="__PUBLIC__/img/addpic.png" alt="添加" id="addPic">
-				<input class="addProject specialInput" placeholder="添加项目">
-			</div> -->
-		</div>
-		<!-- <div class="datalists astable" id="datalist02"></div> -->
+		<div class="tableAdjust"></div>
 	</div>
 	<div class="hidedom new_input_board"> <!-- 弹出的输入框界面，输入药物和检查项目 -->
 		<div class="new_board">
-			<input type="text" placeholder="药物处方或者检查项目"><span id="cancelorconfirm">取消</span>
+			<input type="text" class="web_input inputnew" placeholder="药物处方或者检查项目"><span id="cancelorconfirm">取消</span>
 			<p class="smallType hidedom">请检查是否有生僻字，检查无误后按确认键输入</p>
-			<div class="datalists astable" id="datalist02"></div>
+			<div class="datalist" id="datalist02"></div>
 		</div>
 		<div class="msgalerted">添加成功</div>
 	</div>
