@@ -1,0 +1,12 @@
+
+.advice_title{width:100%;border-bottom:1px solid #D8D8D8}
+.advice_box{height:100%;margin-left:15px;margin-right:15px;}
+.advice_ li{list-style-type:none;background-color:#fff;margin-left:0px;margin-bottom:2px;float:left;overflow:hidden;position:relative;left:-40px;height:120px;border:1px solid #D8D8D8;width:100%}
+.advice_ {width:100%; margin:0px}
+.advice_pic{width:90px;padding-left:5%;padding-right:5%;height:90px;position:relative;display:inline-block;margin-top:4px}
+.advice_doc{width:45%;height:110px;top:-30px;position:relative;display:inline-block}
+.advice_doc1{font-size:13px;}
+.advice_doc2{font-size:18px;top:10px;position:relative;font-weight:500}
+.advice_title_doc1{font-size:12px;position:relative;left:10px;color:#CCC}
+.advice_title_doc2{font-size:12px;position:relative;top:20px;color:#CCC}
+.advice_date1{position:absolute;top:50%;font-size:12px;left:60%}

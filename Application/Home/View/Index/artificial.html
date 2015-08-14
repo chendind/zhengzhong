@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>人工咨询</title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/common.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/service.css">
+	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+	<div class="title hightlight" ><span>人工咨询</span></div>
+	<div data-role="content" class="content service_box" style="margin-top:10px">
+		<ul class="service_">
+			<li> 
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>
+				<div class="service_doc">
+					<span class="service_doc1">历史会话 <br></span>
+					<span class="service_doc2">未结束的人工收费咨询</span>
+				</div>
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>
+			</li>
+			<li>
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>
+				<div class="service_doc">
+					<span class="service_doc1">科室咨询 <br></span>
+					<span class="service_doc2">按科室咨询医师的收费咨询</span>
+				</div>
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>      
+			</li>
+			<li>
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>
+				<div class="service_doc">
+					<span class="service_doc1">客服咨询 <br></span>
+					<span class="service_doc2">免费的非专业问题咨询</span>
+				</div>
+				<div class="service_pic">
+					<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%">
+				</div>         
+			</li>
+		</ul>
+	</div>
+	<div class="foot">
+		<div class="footItem">
+			<img src="__PUBLIC__/img/home_grey.png"><br><span>首页</span>
+		</div>
+		<div class="footItem" data="foot_msg">
+			<img src="__PUBLIC__/img/zz_grey.png"><br><span>诊中查询</span>
+		</div>
+		<div class="footItem current">
+			<img src="__PUBLIC__/img/rgzx_yellow.png"><br><span>人工咨询</span>
+		</div>
+		<div class="footItem">
+			<img src="__PUBLIC__/img/personalcenter_grey.png"><br><span>个人中心</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".footItem:eq(0)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/main.html"});
+		$(".footItem:eq(1)").click(function(){location.href="__ROOT__"+"/index.php/Home/Analyze/page1.html"});
+		$(".footItem:eq(2)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/artificial.html"});
+		$(".footItem:eq(3)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/personalcenter.html"});
+	</script>
+</body>
+</html>

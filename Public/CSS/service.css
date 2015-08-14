@@ -1,0 +1,10 @@
+body{
+	background-color: #f3f3f3;
+}
+.service_box{height:370px}
+.service_ li{list-style-type:none;background-color:#fff;margin-left:0px;margin-bottom:2px;float:left;overflow:hidden;position:relative;left:-40px;height:100px;}
+.service_ {width:100%; margin:0px}
+.service_pic{width:15%;padding-left:5%;padding-right:5%;height:50%;top:25%;position:relative;display:inline-block}
+.service_doc{width:45%;height:50%;top:18%;position:relative;display:inline-block}
+.service_doc1{font-size:18px;}
+.service_doc2{font-size:12px;}
