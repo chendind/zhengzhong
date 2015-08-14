@@ -21,8 +21,8 @@ $(document).ready(function(){
 	$(document).on("click",".deleteProject",function(e){
 		//console.log(this.parentNode);
 		var optionVal=$(this.parentNode).text();
-		var selected=$(this).parents(".datalists").prev("select").children("option:selected");
-		//console.log($(this).parents(".datalists"));
+		var selected=$(this).parents(".datalist").prev("select").children("option:selected");
+		//console.log($(this).parents(".datalist"));
 		var length=selected.size();
 		var i;
 		for(i=0;i<length;i++){
@@ -39,14 +39,14 @@ $(document).ready(function(){
 		var $selected=$(this).children('option:selected');
 		var length=$selected.size();
 		var i,insts;
-		var datalists=$(this).next(".datalists");
-		datalists.children().remove();
+		var datalist=$(this).next(".datalist");
+		datalist.children().remove();
 		for(i=0;i<length;i++){
 			insts="<div><span>"+$selected[i].value+"</span><img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-			$(insts).appendTo(datalists);
+			$(insts).appendTo(datalist);
 		}
 		if(length>=1){
-			datalists.show();
+			datalist.show();
 		}
 	});
 	
@@ -212,14 +212,14 @@ function chkSessions(){
 		var $selected=$(this).children('option:selected');
 		var length=$selected.size();
 		var i,insts;
-		var datalists=$(this).next(".datalists");
-		datalists.children().remove();
+		var datalist=$(this).next(".datalist");
+		datalist.children().remove();
 		for(i=0;i<length;i++){
 			insts="<div><span>"+$selected[i].value+"</span><img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-			$(insts).appendTo(datalists);
+			$(insts).appendTo(datalist);
 		}
 		if(length>=1){
-			datalists.show();
+			datalist.show();
 		}
 	});
 }

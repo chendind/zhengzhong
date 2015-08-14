@@ -81,9 +81,10 @@ body{
 #datalist01,#datalist02{
 	width: 100%;
 }
-.datalists{
+.datalist{
 	position: relative;
 	vertical-align: middle;
+	border-color: #ccc;
 	/*max-height: 19.5vh;*/
 }
 
@@ -95,11 +96,6 @@ body{
 	/*margin: 4.2vw 0 2.5vw 0;*/
 	margin: 15px 0 9px 0;
 }
-.astable,.astable>div{
-	position: relative;
-	border-color: #ccc;
-	
-}
 input{
 	text-align: center;
 }
@@ -108,10 +104,9 @@ input{
 }
 
 .foot_button{
-	position: relative;
 	bottom: auto;
 	width: 100%;
-	margin: 20px 0 4px 0;
+	margin: 20px 0 22px 0;
 	padding: 20px 0;
 }
 .foot_button>span{
