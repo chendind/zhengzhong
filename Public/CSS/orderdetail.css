@@ -60,26 +60,30 @@
 	display: inline-block;
 	float: right;
 	width: 66%;
+	overflow: hidden;
 }
 .doctor p:first-child{
 	margin: 20px 0;
 	white-space:nowrap;
 	text-overflow: ellipsis;
-    overflow:hidden;
+    	overflow:hidden;
 }
 .doctor p:last-child{
-	line-height: 1.8;
-	height: 50.4px;
+	overflow : hidden;
+    	text-overflow: ellipsis;
+    	display: -webkit-box;
+  	 -webkit-line-clamp: 2;
+   	 -webkit-box-orient: vertical;
 }
 .orderline,.orderline2{
 	white-space:nowrap;
 	text-overflow: ellipsis;
-    overflow:hidden;
+    	overflow:hidden;
 }
 .twoLine{
 	text-overflow: ellipsis;
-    overflow:hidden;
-    -webkit-line-clamp: 2;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+  	overflow:hidden;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+    	-webkit-box-orient: vertical;
 }
