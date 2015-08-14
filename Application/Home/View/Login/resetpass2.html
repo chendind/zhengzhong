@@ -17,7 +17,7 @@
 	<div class="content">
 		<div class="webinput"><input id="phoneNum" type="password" placeholder="设置登录密码"></div>
 		<div class="webinput"><input id="password" type="password" placeholder="确认登录密码"></div>
-		<div class="foot_button hightlight" id="confirm"><span>确定</span></div>
+		<div class="foot_button" id="confirm"><span class="hightlight">确定</span></div>
 	</div>
 
 	<script type="text/javascript">
@@ -39,7 +39,7 @@
 		});
 		$("img.title_img_left").click(function(){
 			window.sessionStorage.removeItem('phoneNum');
-			location.href='securityCode.html';
+			location.href='resetpass.html';
 		});
 	</script>
 </body>

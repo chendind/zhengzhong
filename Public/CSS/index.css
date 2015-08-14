@@ -36,15 +36,3 @@
 	margin-right: 20px;
 	height: 17px;
 }
-.foot_button{
-	position: absolute;
-    width: 90%;
-    bottom: 27px;
-    margin: 0 5%;
-    padding: 10px 0;
-    font-size: 20px;
-}
-.foot_button>span{
-	display: inline-block;
-	width: 90%;
-}

@@ -54,8 +54,8 @@ div.title[data='mail_msg']::after{
 }
 .content{
 	position: relative;
-	overflow-y: auto;
 	min-height: 60%;
+	overflow: auto;
 }
 .box{
 	font-size: 12px;
@@ -177,16 +177,21 @@ div.footItem[data='zz_msg']::after{
     margin: 10px 20px;
 }
 
-/* 长得像button的框 */
+/* 长得像button的框    默认是长的框 */
 .foot_button{
-	width: 100%;
+	position: absolute;
+	width: 90%;
+	margin-left:  5%;
+
+	height: 46px;
+	line-height: 46px;
+	bottom: 27px;
+	padding: 0;
+	font-size: 20px;
 	margin-top: 42px;
 	background-color: white;
 }
 .foot_button>span{
 	display: inline-block;
-	margin-left: 25%;
-	width: 50%;
-	/*line-height: 2;*/
-	font-size: 20px;
+	width: 100%;
 }
