@@ -1,9 +1,9 @@
-Application\Runtime\*
-Application/Runtime/*
-ThinkPHP/*
-ThinkPHP\*
+Application\Runtime\
+Application/Runtime/
+ThinkPHP/
+ThinkPHP\
 composer.json
 index.php
 readme.md
-Application/Common/Conf/*
-.htaccess
+Application/Common/Conf/
+*.htaccess
