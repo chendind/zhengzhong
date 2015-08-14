@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-body{color:#000;background:url(../img/paper.jpg) repeat #fff;font:normal 100% Arial,sans-serif,Microsoft Yahei;margin:0;padding:0;}
+body{color:#000;/*background:url(../img/paper.jpg) repeat #fff;*/font:normal 100% Arial,sans-serif,Microsoft Yahei;margin:0;padding:0;}
 html,body,form,input,select,textarea,div,p,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;}
 ul,li,dl,dt,dd{list-style:none;}
 table,td,img{border:0;}
