@@ -29,38 +29,53 @@ $("#cancelorconfirm").click(function(){
         if($("#cancelorconfirm").html()=="取消"){
                 $(".hidedom").hide();
                 $(".new_input_board").removeClass("from_input1");
+                $(".datalist").children().remove();
         }
         else{
-      //用户手动输入项的输入
-      var itemName=$("input")[1].value;
-      var datalist=$("div.datalist>div:contains("+itemName+")");//候选框
-      if(datalist.length==0){
-        //这个项目并没有相近的候选项
-        if($("input:eq(1)").hasClass("from_input1")){
-        	$("input")[0].value=$("input")[1].value;
-        	$("input")[1].value=null;
-        	$("#cancelorconfirm").text("取消");
-        	$("hidedom").hide();
-        	return;
+                //用户手动输入项的输入
+                var itemName=$("input")[1].value;
+                var datalist=$("div.datalist>div");//候选框
+               var length=datalist.length,i;
+               for(i=0;i<length;i++){
+                        if(datalist[i].innerHTML==itemName){
+                                $(datalist[i]).click();
+                                return;
+                        }
+               }
+                //这个项目并没有相近的候选项并且是诊断名
+                if($(".new_input_board").hasClass("from_input1")){
+                        $("input")[0].value=$("input")[1].value;
+                        $("input")[1].value=null;
+                        $("#cancelorconfirm").text("取消");
+                        $(".hidedom").hide();
+                        $(".new_input_board").removeClass("from_input1");
+                        $(".datalist").children().remove();
+                        return;
+                }
+                var alreadyInputs=$("div.tableAdjust>div");
+                length=alreadyInputs.length;
+                for(i=0;i<length;i++){
+                        if($(alreadyInputs[i]).text()==itemName){
+                                alert('已经添加成功了');
+                                $("input")[1].value=null;
+                                $("input:eq(1)").focus();
+                                $("#cancelorconfirm").text("取消");
+                                return;
+                        }
+                }
+                //已添加的项目中也没有这条记录
+                notfoundArr.push($("input:eq(1)")[0].value);
+                window.sessionStorage.setItem('notfoundArr',notfoundArr);
+                var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
+                inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+                $(inst).prependTo($('div.tableAdjust'));
+                showmsg('添加成功');
+                //$("input")[1].value=null;
+                $("input:eq(1)").focus();
+                //$("#cancelorconfirm").text("取消");
+                return ;
         }
-        var alreadyInputs=$("div.tableAdjust>div:contains("+itemName+")");
-        if(alreadyInputs.length==0){//已添加的项目中也没有这条记录
-        	notfoundArr.push($("input:eq(1)")[0].value);
-        	window.sessionStorage.setItem('notfoundArr',notfoundArr);
-        	var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
-        	inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-        	$(inst).prependTo($('div.tableAdjust'));
-        	showmsg('添加成功');
-        }
-        else{
-        	showmsg('已经添加成功了');
-        }
-        $("input")[1].value=null;
-        $("input:eq(1)").focus();
-        $("#cancelorconfirm").text("取消");
-  }
-}
-})
+});
 
 /*输入项目框 enter 键事件*/
 $("input:eq(1)").keypress(function(e){
@@ -70,18 +85,19 @@ $("input:eq(1)").keypress(function(e){
 });
 
 /*从datalist中选中了某个行,datalist是后台获得的备选列表*/
-$(".datalist").click(function(){
+$(".datalist").click(function(e){
         var itemName=e.target.textContent;
         if($(".new_input_board").hasClass("from_input1")){
-                $("input:eq(0)").value=itemName;
+                $("input")[0].value=itemName;
                 $("#cancelorconfirm").text("取消");
                 $(".new_input_board").removeClass("from_input1");
-                $("hidedom").hide();
-                return;
+                $(".hidedom").hide();
+                console.log(itemName);
+                return ;
         }
         var types=e.target.getAttribute("ctype");
         var msg="添加成功";
-         if(!chkItemExist(itemName,types)){//添加medicine or inspect
+        if(!chkItemExist(itemName,types)){//添加medicine or inspect
                 var imgsrc=curPUBLIC+'/img/'+types+'.png';
                 var textContent=e.target.textContent;
                 var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
@@ -96,11 +112,11 @@ $(".datalist").click(function(){
                         window.sessionStorage.setItem("medicineArr",medicineArr);
                 }
                 showmsg(msg);//淡入淡出消息框
-         }
-         else{
+        }
+        else{
                 msg="取消成功";
                 showmsg(msg);
-         }
+        }
 });
  
 /* 点击条目上的删除图标的行为 */
@@ -129,32 +145,27 @@ $(document).on("click",".deleteProject",function(e){
 });
 
 $("#addPic").parent().click(function(){
-	console.log('show hide div board.');
-	$("div.hidedom").show();
-	$("input")[1].focus();
+        $("div.hidedom").show();
+        $("input")[1].focus();
 });
 
 $(".title_img_left").click(function(){window.location.href="page1.html";});
 
 $(".foot_button").click(function(){
-	if(!$("input")[0].value){
-		console.log('no diagnosis name');
-		return false;
-	}
-	var sessions=window.sessionStorage;
-    sessions.setItem("diagnosis",$("input")[0].value);//检查诊断名
-    // if(sessions.getItem("oid")==null){
-    //   console.log('no oid');
-    // }
-    // else
-    if(!sessions.getItem("age")){  //检查上一页的表单信息
-    	console.log('session out of time');
-    	window.location.href="page1.html";
-    }
-    else{
-      // console.log('ready to post order');
-      location.href="page3.html";
-}
+        if(!$("input")[0].value){
+                console.log('no diagnosis name');
+                return false;
+        }
+        var sessions=window.sessionStorage;
+        sessions.setItem("diagnosis",$("input")[0].value);//检查诊断名
+        if(!sessions.getItem("age")){  //检查上一页的表单信息
+                console.log('session out of time');
+                window.location.href="page1.html";
+        }
+        else{
+        // console.log('ready to post order');
+                location.href="page3.html";
+        }
 });
 });/* end of document.ready */
 
@@ -168,7 +179,7 @@ function timeOut(index){
                data:{name:inputVal},
                success: function (data) {
                       if (data.count>0) {
-                             console.log(data);
+                             //console.log(data);
                              ret=data;
                              var options,i,j=Math.min(data.count,50);
                              for(i=0;i<j;i++){
@@ -203,22 +214,20 @@ function timeOut(index){
 }
 
 function dropElemFromArr(arr,textContent){
-	if(arr.length){
-    //console.log(arr.length);
-    var length=arr.length,i;
-    for(i=1;i<=length;i++){
-    	if(arr[i-1]==textContent){
-    		arr.splice(i-1,1);
-    		return 1;
-    	}
-    }
-}  
-return 0;
+        if(arr.length){
+                var length=arr.length,i;
+                for(i=1;i<=length;i++){
+                        if(arr[i-1]==textContent){
+                                arr.splice(i-1,1);
+                                return 1;
+                        }
+                }
+        }
+        return 0;
 }
 
 /* 淡入淡出控制函数 */
 function showmsg(msg){
-        console.log(msg);
         $("div.msgalerted").text(msg);
         $("div.msgalerted").fadeIn("normal",function(){$("div.msgalerted").fadeOut("normal")});
 }
