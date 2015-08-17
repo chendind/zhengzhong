@@ -5,7 +5,7 @@ body{
 .service_ li{list-style-type:none;background-color:#fff;margin-left:0px;margin-bottom:2px;float:left;overflow:hidden;position:relative;left:-40px;height:90px;width: 100%;}
 .service_ {width:100%; margin:0px}
 .service_pic{padding-left:22px;padding-right:14px;top:25%;position:relative;display:inline-block}
-.service_doc{width:45%;top:28px;position:relative;display:inline-block}
+.service_doc{top:28px;position:relative;display:inline-block}
 .service_doc1{font-size:18px;color: #4a4a4a;}
 .service_doc2{font-size:12px;color: #828282;}
 .service_pic2{
