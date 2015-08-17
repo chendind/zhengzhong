@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>客服咨询</title>
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/common.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/clinic.css">
+	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
+
+
+</head>
+<body>
+	<div class="title hightlight"><img src="__PUBLIC__/img/backpic.png" alt="pic" class="title_img_left"><span>客服咨询</span></div>
+	
+	<div class="clinic_list">
+	      	<div class="clinic_name"><span>投诉与建议</span><img src="__PUBLIC__/img/nextpage.png"></div>
+	      	<div class="clinic_name"><span>诊后调节</span><img src="__PUBLIC__/img/nextpage.png"></div>
+  	</div>
+
+  	<div class="foot">
+		<div class="footItem">
+			<img src="__PUBLIC__/img/home_grey.png"><br><span>首页</span>
+		</div>
+		<div class="footItem">
+			<img src="__PUBLIC__/img/zz_grey.png"><br><span>诊中查询</span>
+		</div>
+		<div class="footItem current">
+			<img src="__PUBLIC__/img/rgzx_yellow.png"><br><span>人工咨询</span>
+		</div>
+		<div class="footItem" data="foot_msg">
+			<img src="__PUBLIC__/img/personalcenter_grey.png"><br><span>个人中心</span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".footItem:eq(0)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/main.html"});
+		$(".footItem:eq(1)").click(function(){location.href="__ROOT__"+"/index.php/Home/Analyze/page1.html"});
+		$(".footItem:eq(2)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/artificial.html"});
+		$(".footItem:eq(3)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/personalcenter.html"});
+		$("img.title_img_left").click(function(){location.href="artificial.html"});
+	</script>
+</body>
+</html>
