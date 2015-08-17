@@ -10,3 +10,9 @@
 .advice_title_doc1{font-size:12px;position:relative;left:10px;color:#CCC}
 .advice_title_doc2{font-size:12px;position:relative;top:20px;color:#CCC}
 .advice_date1{position:absolute;top:50%;font-size:12px;left:60%}
+.advice_pic2{
+	position: absolute;
+	top: 54px;
+	right: 15px;
+	height: 33px;
+}

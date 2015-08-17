@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>未结束的咨询</title>
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="__PUBLIC__/CSS/jquery.mobile-1.3.1.css" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/CSS/common.css">
+	<link href="__PUBLIC__/CSS/advice.css" type="text/css" rel="stylesheet" />
+	<script src="__PUBLIC__/js/jquery-2.1.4.min.js"></script>
+	<script src="__PUBLIC__/js/jquery.mobile-1.3.1.min.js"></script>
+	<script src="__PUBLIC__/js/advice.js"></script>
+</head>
+<body>
+	<div data-role="page">
+
+  <div class="title hightlight" ><img src="__PUBLIC__/img/backpic.png" alt="back" class="title_img_left"><span>人工咨询</span></div>
+  <!-- /header -->
+  
+    <div data-role="content" class="advice_box" style="margin-top:10px">
+            <ul class="advice_">
+            	<li> 
+            		<div class="advice_title">
+            			<span class="advice_title_doc1">编号：1010</span>
+            		</div>
+            		<div class="advice_pic">
+            			<img src="__PUBLIC__/img/1.jpg" style="height:100%;width:100%;">
+            		</div>
+            		<div class="advice_doc">
+            			<span class="advice_doc1">医师 <br></span>
+            			<span class="advice_doc2">傅总 <br> <br></span>
+            			<span class="advice_date1">2015.07.06</span>
+            		</div>
+            		<img class="advice_pic2" src="__PUBLIC__/img/next2.png">
+            	</li>
+               
+              
+            </ul>
+        </div>
+  
+  <div class="foot">
+		<div class="footItem">
+			<img src="__PUBLIC__/img/home_grey.png"><br><span>首页</span>
+		</div>
+		<div class="footItem" >
+			<img src="__PUBLIC__/img/zz_grey.png"><br><span>诊中查询</span>
+		</div>
+		<div class="footItem current">
+			<img src="__PUBLIC__/img/rgzx_yellow.png"><br><span>人工咨询</span>
+		</div>
+		<div class="footItem" data="foot_msg">
+			<img src="__PUBLIC__/img/personalcenter_grey.png"><br><span>个人中心</span>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+		$(".footItem:eq(0)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/main.html"});
+		$(".footItem:eq(1)").click(function(){location.href="__ROOT__"+"/index.php/Home/Analyze/page1.html"});
+		$(".footItem:eq(2)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/artificial.html"});
+		$(".footItem:eq(3)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/personalcenter.html"});
+		$("img.title_img_left").click(function(){location.href="artificial.html"});
+</script>
+</body>
+</html>
