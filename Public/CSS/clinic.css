@@ -1,0 +1,23 @@
+body{
+	background: #f3f3f3;
+}
+.clinic_list{
+	margin-top:16px
+}
+.clinic_name{
+	position: relative;
+	box-sizing: border-box;
+	-webkit-box-sizing; border-box;
+	background-color: white;
+	height: 45px;
+	line-height: 45px;
+	margin-bottom: 1px;
+	padding-left: 24px;
+	color: #828282;
+}
+.clinic_name>img{
+	position: absolute;
+	right: 22px;
+	top: 14px;
+	height: 18px;
+}
