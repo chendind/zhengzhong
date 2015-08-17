@@ -56,6 +56,7 @@ div.title[data='mail_msg']::after{
 	position: relative;
 	min-height: 60%;
 	overflow: auto;
+	padding-bottom: 55px;
 }
 .box{
 	font-size: 12px;
@@ -64,7 +65,7 @@ div.title[data='mail_msg']::after{
 /*foot 是底下的导航栏样式*/
 .foot{
 	height: 49px;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
 	background-color: white;
@@ -81,7 +82,7 @@ div.title[data='mail_msg']::after{
 	line-height: 1.2;
 }
 .footItem>img{
-	height: 29px;
+	height: 26px;
 }
 div.footItem[data='foot_msg']::after{
 	content: '';
@@ -195,4 +196,7 @@ div.footItem[data='foot_msg']::after{
 }
 input{
 	border-radius: 0;
+}
+a{
+	text-decoration: none;
 }

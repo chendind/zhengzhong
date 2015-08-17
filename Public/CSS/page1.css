@@ -71,6 +71,9 @@ body{
 	width: 20%;
 	/*vertical-align: top;*/
 }
+#myinput01{
+	height: 23px;
+}
 #boxsp07{
 	margin-left: 7.7%;
 	margin-right: 8.7%;
@@ -86,6 +89,7 @@ body{
 	vertical-align: middle;
 	border-color: #ccc;
 	/*max-height: 19.5vh;*/
+	z-index: 1;
 }
 
 .autoset{
@@ -103,6 +107,9 @@ input{
 	width: 67px;
 }
 
+.foot{
+	z-index: 2;
+}
 .foot_button{
 	bottom: auto;
 	width: 100%;

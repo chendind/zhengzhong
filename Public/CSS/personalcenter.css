@@ -10,7 +10,7 @@
 .content{
 	background-color: #f3f3f3;
 	top: -3px;
-	height: 84%;
+	/*height: 100%;*/
 }
 .listview{
 	margin-top: 22px;
@@ -35,4 +35,7 @@
 	right: 0;
 	margin-right: 20px;
 	height: 17px;
+}
+.foot{
+	position: fixed;
 }

@@ -52,7 +52,7 @@ $("#cancelorconfirm").click(function(){
                         $(".datalist").children().remove();
                         return;
                 }
-                var alreadyInputs=$("div.tableAdjust>div");
+                var alreadyInputs=$("div#medandinsp>div");
                 length=alreadyInputs.length;
                 for(i=0;i<length;i++){
                         if($(alreadyInputs[i]).text()==itemName){
@@ -68,7 +68,7 @@ $("#cancelorconfirm").click(function(){
                 window.sessionStorage.setItem('notfoundArr',notfoundArr);
                 var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
                 inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-                $(inst).prependTo($('div.tableAdjust'));
+                $(inst).prependTo($('div#medandinsp'));
                 showmsg('添加成功');
                 //$("input")[1].value=null;
                 $("input:eq(1)").focus();
@@ -102,7 +102,7 @@ $(".datalist").click(function(e){
                 var textContent=e.target.textContent;
                 var inst="<div><img src="+imgsrc+" alt='pic'><span>"+textContent+"</span>";
                 inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-                $(inst).prependTo($('.tableAdjust'));//添加到对应的药物、检查项目列表里；
+                $(inst).prependTo($('#medandinsp'));//添加到对应的药物、检查项目列表里；
                 if(types=='inspect'){
                         inspectArr.push(textContent);
                         window.sessionStorage.setItem("inspectArr",inspectArr);
@@ -188,11 +188,11 @@ function timeOut(index){
                                    }
                                    else{
                                            if(data.list[i].type=="medicine"){
-                                                  options="<div ctype='medicine'>"+data.list[i].medicine_productname+"</div>";
+                                                  options="<div ctype='medicine'><img src='"+curPUBLIC+"/img/medicine.png'><span>"+data.list[i].medicine_productname+"</span></div>";
                                           }
                                           else{
                                                   if(data.list[i].type=="inspect"){
-                                                         options="<div ctype='inspect'>"+data.list[i].inspect_name+"</div>";
+                                                         options="<div ctype='inspect'><img src='"+curPUBLIC+"/img/inspect.png'><span>"+data.list[i].inspect_name+"</span></div>";
                                                  }
                                          }
                                  }
@@ -237,7 +237,7 @@ true:曾经有，现已删除
 false:没有
 */
 function chkItemExist(itemName,type){
-        var tableAdjustDivs=$(".tableAdjust>div");
+        var tableAdjustDivs=$("#medandinsp>div");
         if(tableAdjustDivs.length==0){
                return false;
        }
