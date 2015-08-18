@@ -14,6 +14,13 @@ p{
 .letter_title{
 	position: relative;
 	font-size: 19px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	padding-right: 63px;
+	white-space: nowrap;
+    	text-overflow: ellipsis;
+    	overflow: hidden;
 }
 .letter_title>span{
 	position: absolute;

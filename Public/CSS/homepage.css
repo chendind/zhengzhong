@@ -39,9 +39,43 @@ button{cursor:pointer;}
 .button_box{width:100%;height:34px;margin-bottom:5px}
 .button_{width:45%;float:left;background-color:#cb9743;height:34px}
 .button_ a{color:#fff !important}
-.exp_box{position:relative;overflow:hidden;padding-left:3%;padding-right:3%;}
+.exp_box{
+	position:relative;
+	margin: 0 5% 2px 5%;
+	overflow:hidden;
+	background-color: white;
+}
 .exps_ li{list-style-type:none;background-color:#fff;margin-left:0px;margin-bottom:2px;float:left;overflow:hidden;}
 .exps{width:100%;}
-.exps_pic{width:30%;padding-left:5%;padding-right:5%;height:80%;top:10%;position:relative;display:inline-block}
-.exps_doc{width:55%;height:80%;top:-50%;position:relative;display:inline-block}
-.exps_date1{position:absolute;top:80%;font-size:14px;left:60%}
+.exps_pic{
+	padding-top:10px;
+	padding-left:  14px;
+	padding-bottom: 14px;
+	 float: left;
+}
+.exps_pic>img{
+	width: 100px;
+	display: block;
+}
+.exps_doc{
+	position:relative;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+	height: 101px;
+	padding-left: 135px;
+}
+.exps_doc_p{
+	margin-top: 15px;
+	overflow: hidden;
+    	text-overflow: ellipsis;
+    	display: -webkit-box;
+    	-webkit-line-clamp: 2;
+    	-webkit-box-orient: vertical;
+}
+.exps_date1{
+	position:absolute;
+	bottom: 15px;
+	right: 20px;
+	font-size:14px;
+}

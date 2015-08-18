@@ -181,7 +181,7 @@ div.footItem[data='foot_msg']::after{
 	/*position: absolute;*/
 	width: 90%;
 	margin-left:  5%;
-
+	margin-bottom: 20px;
 	height: 46px;
 	line-height: 46px;
 	bottom: 27px;
