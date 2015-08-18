@@ -69,7 +69,8 @@ div.title[data='mail_msg']::after{
 	bottom: 0;
 	width: 100%;
 	background-color: white;
-	padding: 4px 0 2px 0;
+	padding: 3px 0 2px 0;
+	border-top: 1px solid #c9c9c9;
 	color: #c8aa9e;
 }
 .footItem{
@@ -79,7 +80,7 @@ div.title[data='mail_msg']::after{
 	height: 100%;
 	text-align: center;
 	font-size: 12px;
-	line-height: 1.2;
+	line-height: 1.4;
 }
 .footItem>img{
 	height: 26px;

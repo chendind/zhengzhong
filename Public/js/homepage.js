@@ -8,8 +8,7 @@ $(document).ready(function(e) {
 	$(".news_box img").each(function(index, element) {
         $(this).css({"width":_width,"height":_height*0.276});
     });
-	$(".scroll_position_bg").css({"padding-left":_width});
-	$(".scroll_position").css({"left":_width-40});	
+	
     var slider = Swipe(document.getElementById('scroll_img'), {
 		auto: 3000,
 		continuous: true,
