@@ -48,6 +48,7 @@ button{cursor:pointer;}
 .exps_ li{list-style-type:none;background-color:#fff;margin-left:0px;margin-bottom:2px;float:left;overflow:hidden;}
 .exps{width:100%;}
 .exps_pic{
+	position: absolute;
 	padding-top:10px;
 	padding-left:  14px;
 	padding-bottom: 14px;
@@ -58,6 +59,7 @@ button{cursor:pointer;}
 	display: block;
 }
 .exps_doc{
+	float: left;
 	position:relative;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -78,4 +80,7 @@ button{cursor:pointer;}
 	bottom: 15px;
 	right: 20px;
 	font-size:14px;
+}
+.bottom{
+	margin-bottom: 30px
 }
