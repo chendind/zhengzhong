@@ -31,17 +31,17 @@ button{cursor:pointer;}
 .scroll_position li{display:inline-block;width:8px;height:8px;border-radius:10px;background:#fff;}
 .scroll_position li a{font-size:0;}
 .scroll_position li.on{background-color:#ffd800;}
-.scroll_position_bg{background:#000;position:relative;top:-25px;z-index:380px;height:26px;}
+.scroll_position_bg{background:#000;position:relative;top:-24px;height:24px;display: block;}
 
 .news_box{position:relative;overflow:hidden;padding-top:0px;padding-left:0px;}
-.news_id{position:relative;top:-62px;font-size:13px;color:#fff;left:20px}
+.news_id{position:relative;top:-62px;font-size:13px;color:#fff;left:21px}
 .news_box2{position:relative;overflow:hidden;padding-top:2%;padding-left:3%;padding-right:3%;}
 .button_box{width:100%;height:34px;margin-bottom:5px}
 .button_{width:45%;float:left;background-color:#cb9743;height:34px}
 .button_ a{color:#fff !important}
 .exp_box{
 	position:relative;
-	margin: 0 5% 2px 5%;
+	margin: 0 20px 2px 20px;
 	overflow:hidden;
 	background-color: white;
 }
@@ -87,8 +87,9 @@ button{cursor:pointer;}
 	margin-bottom: 30px
 }
 .experience{
-	margin-left: 5%;
-	margin-bottom: 5px;
+	margin-left: 21px;
+	height: 31px;
+	line-height: 31px;
 	color: #696969;
 	font-size: 15px;
 }
