@@ -104,6 +104,7 @@ button{cursor:pointer;}
 	position: absolute;
 	bottom: 0;
 	height: 25px;
+	line-height: 25px;
 	width: 100%;
 	z-index: 2;
 	background-color: #101010;
