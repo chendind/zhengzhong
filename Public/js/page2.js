@@ -30,6 +30,7 @@ $("#cancelorconfirm").click(function(){
                 $(".hidedom").hide();
                 $(".new_input_board").removeClass("from_input1");
                 $(".datalist").children().remove();
+                $("body").removeClass("switchon");
         }
         else{
                 //用户手动输入项的输入
@@ -146,6 +147,7 @@ $(document).on("click",".deleteProject",function(e){
 
 $("#addPic").parent().click(function(){
         $("div.hidedom").show();
+        $("body").addClass("switchon");
         $("input")[1].focus();
 });
 

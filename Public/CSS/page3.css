@@ -4,8 +4,6 @@
 	border-bottom: 1px solid #ccc;
 }
 .content{
-	height: 84%;/*
-	margin-top: 8%;*/
 	background-color: #f3f3f3;
 }
 .result_overview img,.onerow img{
@@ -75,9 +73,7 @@
 }
 
 /* 底部导航栏 */
-.foot{
-	position: absolute;
-	top: 92.5%;
+.foot{	
 	width: 100%;
 }
 .middleline{

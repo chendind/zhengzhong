@@ -5,7 +5,7 @@ body{
 .content{
 	background-color: #f3f3f3;
 	top: -1px;
-    	height: 84%;
+    	/*height: 84%;*/
     	padding-bottom: 55px;
 }
 .square_select,.square{
@@ -114,7 +114,7 @@ input{
 .foot_button{
 	bottom: auto;
 	width: 100%;
-	margin: 20px 0 22px 0;
+	margin: 0;
 	padding: 20px 0;
 }
 .foot_button>span{
