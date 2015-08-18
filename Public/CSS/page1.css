@@ -5,7 +5,8 @@ body{
 .content{
 	background-color: #f3f3f3;
 	top: -1px;
-    height: 84%;
+    	height: 84%;
+    	padding-bottom: 55px;
 }
 .square_select,.square{
 	overflow: hidden;
