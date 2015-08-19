@@ -166,3 +166,8 @@ div.msgalerted{
 #medandinsp{
 	color: #958282;
 }
+#confirm{
+	margin-left: 15px;
+	font-size: 15px;
+	background-color: #ccc;
+}

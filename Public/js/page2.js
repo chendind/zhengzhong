@@ -9,12 +9,12 @@ $("input:eq(0)").click(function(){
             $("#addPic").click();
 });
 $("input:eq(1)").keyup(function(e){
-        if(e.target.value){
-                $("#cancelorconfirm").html("添加");
-        }
-        else{
-                $("#cancelorconfirm").html("取消");
-        }
+        // if(e.target.value){
+        //         $("#cancelorconfirm").html("添加");
+        // }
+        // else{
+        //         $("#cancelorconfirm").html("取消");
+        // }
         clearTimeout(timeId);
         $(".datalist").children().remove();
         if($(".new_input_board").hasClass("from_input1")){
@@ -25,57 +25,54 @@ $("input:eq(1)").keyup(function(e){
         }
 });
 
-$("#cancelorconfirm").click(function(){
-        if($("#cancelorconfirm").html()=="取消"){
+$("#confirm").click(function(){
+        //用户手动输入项的输入
+        var itemName=$("input")[1].value;
+        var datalist=$("div.datalist>div");//候选框
+        var length=datalist.length,i;
+        for(i=0;i<length;i++){
+                if(datalist[i].innerHTML==itemName){
+                        $(datalist[i]).click();
+                        return;
+                }
+        }
+        //这个项目并没有相近的候选项并且是诊断名
+        if($(".new_input_board").hasClass("from_input1")){
+                $("input")[0].value=$("input")[1].value;
+                $("input")[1].value=null;
                 $(".hidedom").hide();
                 $(".new_input_board").removeClass("from_input1");
                 $(".datalist").children().remove();
-                $("body").removeClass("switchon");
+                return;
         }
-        else{
-                //用户手动输入项的输入
-                var itemName=$("input")[1].value;
-                var datalist=$("div.datalist>div");//候选框
-               var length=datalist.length,i;
-               for(i=0;i<length;i++){
-                        if(datalist[i].innerHTML==itemName){
-                                $(datalist[i]).click();
-                                return;
-                        }
-               }
-                //这个项目并没有相近的候选项并且是诊断名
-                if($(".new_input_board").hasClass("from_input1")){
-                        $("input")[0].value=$("input")[1].value;
+        var alreadyInputs=$("div#medandinsp>div");
+        length=alreadyInputs.length;
+        for(i=0;i<length;i++){
+                if($(alreadyInputs[i]).text()==itemName){
+                        alert('已经添加成功了');
                         $("input")[1].value=null;
-                        $("#cancelorconfirm").text("取消");
-                        $(".hidedom").hide();
-                        $(".new_input_board").removeClass("from_input1");
-                        $(".datalist").children().remove();
+                        $("input:eq(1)").focus();
                         return;
                 }
-                var alreadyInputs=$("div#medandinsp>div");
-                length=alreadyInputs.length;
-                for(i=0;i<length;i++){
-                        if($(alreadyInputs[i]).text()==itemName){
-                                alert('已经添加成功了');
-                                $("input")[1].value=null;
-                                $("input:eq(1)").focus();
-                                $("#cancelorconfirm").text("取消");
-                                return;
-                        }
-                }
-                //已添加的项目中也没有这条记录
-                notfoundArr.push($("input:eq(1)")[0].value);
-                window.sessionStorage.setItem('notfoundArr',notfoundArr);
-                var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
-                inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
-                $(inst).prependTo($('div#medandinsp'));
-                showmsg('添加成功');
-                //$("input")[1].value=null;
-                $("input:eq(1)").focus();
-                //$("#cancelorconfirm").text("取消");
-                return ;
         }
+        //已添加的项目中也没有这条记录
+        notfoundArr.push($("input:eq(1)")[0].value);
+        window.sessionStorage.setItem('notfoundArr',notfoundArr);
+        var inst="<div><img src='"+curPUBLIC+"/img/unknow.png' alt='pic'><span>"+$("input:eq(1)")[0].value+"</span>";
+        inst+="<img src='"+curPUBLIC+"/img/deletpic.png' alt='delete' class='deleteProject'></div>";
+        $(inst).prependTo($('div#medandinsp'));
+        showmsg('添加成功');
+        $("input")[1].value=null;
+        $("input:eq(1)").focus();
+        return ;
+});
+
+$("#cancelorconfirm").click(function(){
+        $(".hidedom").hide();
+        $(".new_input_board").removeClass("from_input1");
+        $("input")[1].value=null;
+        $(".datalist").children().remove();
+        $("body").removeClass("switchon");
 });
 
 /*输入项目框 enter 键事件*/
