@@ -1,12 +1,19 @@
 $(document).ready(function(e) {
 	var _width = document.body.offsetWidth;
 	var _height = document.body.offsetHeight;
-	$(".news_box").css({"width":_width,"height":_height*0.28});	
 	// var exp_box_height = _height - $(".ui-header").height() - $(".ui-footer").height() - $(".news_box").height() - $(".news_box2").height() - 5;
 	// $(".exp_box").css({"height":exp_box_height});	
 	// $(".exp_box li").css({"width":"100%","height":exp_box_height*0.32});
-	$(".news_box img").each(function(index, element) {
-        $(this).css({"width":_width,"height":_height*0.276});
+	$(".scroll_box img").each(function(index, element) {
+        $(this).css({"width":_width});
+		console.log($(this));
+    });
+	$(".exp_box").each(function(index, element) {
+        if($(this).hasClass("bottom")) {
+		}
+		else {
+			$(this).css("border-bottom","#c9c9c9 1px solid")
+		}
     });
 	
     var slider = Swipe(document.getElementById('scroll_img'), {

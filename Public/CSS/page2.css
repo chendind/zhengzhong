@@ -33,7 +33,7 @@ h1{
 	font-weight: normal;
 }
 p{
-	color: #555555;
+	color: #4a4a4a;
 }
 .smallType{
 	font-size: 12px;
@@ -162,4 +162,7 @@ div.msgalerted{
 }
 .switchon{
 	overflow: hidden;
+}
+#medandinsp{
+	color: #958282;
 }

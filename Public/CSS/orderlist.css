@@ -1,13 +1,17 @@
 .content{
-	height: 92%;
+	padding-bottom: 0;
 	background-color: #f3f3f3;
 	overflow-y: auto;
+	color: #828282;
 }
 .olist{
-	margin-top: 21px;
+	margin-top: 22px;
 	padding: 1px 0;
 	background-color: white;
 	font-size: 14px;
+}
+.olist:last-child{
+	margin-bottom: 22px;
 }
 .orderline{
 	margin-left: 2em;

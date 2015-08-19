@@ -4,8 +4,12 @@ body{
 p{
 	margin: 0;
 }
-
+.content{
+	padding-bottom: 0;
+}
 .letter{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	height: 100px;
 	padding: 24px 22px 0 22px;
 	background-color: #f3f3f3;
@@ -13,7 +17,6 @@ p{
 }
 .letter_title{
 	position: relative;
-	font-size: 19px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	width: 100%;
@@ -29,8 +32,8 @@ p{
 	font-size: 12px;
 }
 .letter_brief{
-	margin-top: 26px;
-	font-size: 15px;
+	margin-top: 22px;
+	font-size: 13px;
 	white-space:nowrap;
 	text-overflow: ellipsis;
     	overflow:hidden;

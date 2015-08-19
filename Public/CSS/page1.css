@@ -5,8 +5,11 @@ body{
 .content{
 	background-color: #f3f3f3;
 	top: -1px;
-    	/*height: 84%;*/
+    	color: #828282;
     	padding-bottom: 55px;
+}
+.content>div:first-child{
+	margin-top: 20px;
 }
 .square_select,.square{
 	overflow: hidden;
@@ -18,7 +21,9 @@ body{
 	float: left;
 	height: 30px;
 }
-
+p{
+	color: #4a4a4a;
+}
 .title_p{
 	margin-left: 5.2%;
 	margin-bottom: 8px;
@@ -26,12 +31,13 @@ body{
 }
 
 .tables{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 	float: left;
-	width: 38.5%; 
+	width: 50%; 
 	overflow: hidden;
-}
-.tables+.tables{
-	margin-left: 9.5vw;
+	padding-left: 5.2%;
+    	padding-right: 7.5%;
 }
 .tables>select{
 	width: 100%;
@@ -53,7 +59,7 @@ body{
 #boxsp01{
 	width: 12.3%;
 }
-#boxsp01,#boxsp05,#boxsp06,.tables{
+#boxsp01,#boxsp05,#boxsp06{
 	margin-left: 5.2%; 
 }
 #boxsp02{
@@ -88,7 +94,7 @@ body{
 .datalist{
 	position: relative;
 	vertical-align: middle;
-	border-color: #ccc;
+	border: 1px solid #979797;
 	/*max-height: 19.5vh;*/
 	z-index: 1;
 }
@@ -115,9 +121,16 @@ input{
 	bottom: auto;
 	width: 100%;
 	margin: 0;
+	margin-top: 22px;
 	padding: 20px 0;
+	border-top: 1px solid #d6d6d6;
+	border-bottom: 1px solid #d6d6d6;
 }
 .foot_button>span{
 	width: 200px;
 	margin: 0 auto;
+}
+.firstp{
+	margin-top: 0;
+	font-size: 18px;
 }

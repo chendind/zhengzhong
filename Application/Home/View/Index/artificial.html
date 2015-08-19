@@ -13,9 +13,9 @@
 </head>
 <body>
 	<div class="title hightlight" ><span>人工咨询</span></div>
-	<div data-role="content" class="service_box" style="margin-top:10px">
-		<ul class="service_">
-			<li> 
+	<div class="content">
+		<div class="service_ addline">
+			<div> 
 				<div class="service_pic">
 					<img src="__PUBLIC__/img/unfinished.png" style="height:33px;">
 				</div>
@@ -26,8 +26,8 @@
 				<div class="service_pic2">
 					<img src="__PUBLIC__/img/nextpage.png" style="height:17px;">
 				</div> 
-			</li>
-			<li>
+			</div>
+			<div>
 				<div class="service_pic">
 					<img src="__PUBLIC__/img/clinics.png" style="height:33px;">
 				</div>
@@ -38,8 +38,8 @@
 				<div class="service_pic2">
 					<img src="__PUBLIC__/img/nextpage.png" style="height:17px;">
 				</div>      
-			</li>
-			<li>
+			</div>
+			<div>
 				<div class="service_pic">
 					<img src="__PUBLIC__/img/services.png" style="height:33px;">
 				</div>
@@ -50,8 +50,8 @@
 				<div class="service_pic2">
 					<img src="__PUBLIC__/img/nextpage.png" style="height:17px;">
 				</div>         
-			</li>
-		</ul>
+			</div>
+		</div>
 	</div>
 	<div class="foot">
 		<div class="footItem">
@@ -72,9 +72,9 @@
 		$(".footItem:eq(1)").click(function(){location.href="__ROOT__"+"/index.php/Home/Analyze/page1.html"});
 		$(".footItem:eq(2)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/artificial.html"});
 		$(".footItem:eq(3)").click(function(){location.href="__ROOT__"+"/index.php/Home/Index/personalcenter.html"});
-		$("ul.service_>li:eq(0)").click(function(){location.href="unfinished.html"});
-		$("ul.service_>li:eq(1)").click(function(){location.href="clinic.html"});
-		$("ul.service_>li:eq(2)").click(function(){location.href="services.html"});
+		$("div.service_>div:eq(0)").click(function(){location.href="unfinished.html"});
+		$("div.service_>div:eq(1)").click(function(){location.href="clinic.html"});
+		$("div.service_>div:eq(2)").click(function(){location.href="services.html"});
 	</script>
 </body>
 </html>
