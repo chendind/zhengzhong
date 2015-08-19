@@ -87,9 +87,9 @@ $(".datalist").click(function(e){
         var itemName=e.target.textContent;
         if($(".new_input_board").hasClass("from_input1")){
                 $("input")[0].value=itemName;
-                $("#cancelorconfirm").text("取消");
                 $(".new_input_board").removeClass("from_input1");
                 $(".hidedom").hide();
+                $(".datalist").children().remove();
                 console.log(itemName);
                 return ;
         }

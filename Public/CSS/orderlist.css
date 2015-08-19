@@ -15,6 +15,7 @@
 }
 .orderline{
 	margin-left: 2em;
+	margin-right: 2em;
 }
 .orderline,.orderline2{
 	white-space:nowrap;

@@ -209,6 +209,7 @@ div.footItem[data='foot_msg']::after{
 }
 input{
 	border-radius: 0;
+	color: #6f6f6f;
 }
 a{
 	text-decoration: none;
