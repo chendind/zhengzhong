@@ -90,6 +90,7 @@ p{
 }
 #datalist01,#datalist02{
 	width: 100%;
+	box-sizing: border-box;
 }
 .datalist{
 	position: relative;
@@ -124,7 +125,6 @@ input{
 	margin-top: 22px;
 	padding: 20px 0;
 	border-top: 1px solid #d6d6d6;
-	border-bottom: 1px solid #d6d6d6;
 }
 .foot_button>span{
 	width: 200px;

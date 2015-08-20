@@ -1,5 +1,8 @@
 .content{
 	overflow-x: hidden;
+	padding-bottom: 0;
+	color: #828282;
+	font-size: 15px;
 }
 .ordermain{
 	display: table;
@@ -16,9 +19,9 @@
 	/*white-space:nowrap;*/
 }
 .omright{
-	display: table-cell;
-	margin-top: 70px;
-	width: 30%;
+	position: absolute;
+	top: 100px;
+	right: 20px;
 	vertical-align: middle;
 	font-size: 25px;
 	color: #cb9741;
@@ -44,9 +47,11 @@
 .doctor{
 	width: 100%;
 	height: 120px;
-	border: 1px dashed red;
+	border: 1px dashed #cb9640;
 	background-color: white;
 	font-size: 14px;
+	padding-right: 7px;
+    	box-sizing: border-box;
 }
 .doctor>img{
 	display: inline-block;
@@ -77,6 +82,7 @@
 	white-space:nowrap;
 	text-overflow: ellipsis;
     	overflow:hidden;
+    	width: 70%;
 }
 .twoLine{
 	text-overflow: ellipsis;

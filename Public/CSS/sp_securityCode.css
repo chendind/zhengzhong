@@ -1,14 +1,9 @@
 #phoneNum,#password,#secCode{
 	background: none;
-	color: #d0d0d0;
-}
-#phoneNum{
-	border-bottom: 1px solid rgb(238,238,238);
 }
 #secCode{
-	border-top: 1px solid rgb(238,238,238);
+	border-top: none;
 }
 .webinput>input{
 	padding-left: 20px;
-	width: 82%;
 }

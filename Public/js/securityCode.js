@@ -1,12 +1,17 @@
 var t=10;
 $(document).ready(function(){
 	//bind getSecurityCode on button#getcode;
-	$("#getcode").bind('click',function(){
-		t=15;
+	$("#getcode").bind('click',function(){t
+		
 		var phoneNum=chkPhoneNum();
 		if(!phoneNum){
 			return;
 		}
+		if($("#getcode").hasClass("disabled")){
+			alert("please wait a few seconds.");
+			return;
+		}
+		t=15;
 		var posturl="/index.php/Home/Login/registerCheckCode";//获取验证码
 		$.ajax({
 			type:"post",
@@ -20,8 +25,11 @@ $(document).ready(function(){
 				}
 				if(ret.state=='0'){
 					console.log("稍等，验证码正在路上");
-					var msg="已发送验证码至"+phoneNum.toString().substring(0,3)+"****"+phoneNum.toString().substring(6,4)+"，验证码24小时有效，请尽快使用。";
-					$("<p>"+msg+"</p>").appendTo($(".webinput:eq(1)"));
+					if($("p.secode_msg").length==0){
+						var msg="已发送验证码至"+phoneNum.toString().substring(0,3)+"****"+phoneNum.toString().substring(6,4)+"，验证码24小时有效，请尽快使用。";
+						$("<p class='secode_msg'>"+msg+"</p>").appendTo($(".webinput:eq(1)"));	
+					}
+					
 				}
 			},
 			error: function(){
@@ -76,11 +84,11 @@ function showTime(){
     t -= 1;
     var showmsg="重新获取("+t+"s)";
     $("#getcode").html(showmsg);
-   	$("#getcode").attr("disabled","disabled");
+   	$("#getcode").addClass("disabled");
 
     if(t==0){
     	// clearTimeout(timeID);
-        $("#getcode").removeAttr("disabled");
+        $("#getcode").removeClass("disabled");
         $("#getcode").html("获取验证码");
         return ;
     }
@@ -93,7 +101,7 @@ function chkPhoneNum(){
 	var usrphone=$("#phoneNum")[0].value;
 	usrphone=parseInt(usrphone);
 	if(usrphone.toString().length<11){
-		console.log('unrecognized phone number.');
+		alert('unrecognized phone number.');
 		return false;
 	}
 	else{
