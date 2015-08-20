@@ -1,7 +1,7 @@
 .content{
 	background-color: #f3f3f3;
-	min-height: 92%;
-	padding: 0 16px;
+	min-height: 100%;
+	padding:  40px 18px 0 18px;
 }
 .attributes{
 	border-bottom: 1px solid #ccc;

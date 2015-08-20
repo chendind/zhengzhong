@@ -60,6 +60,7 @@ div.title[data='mail_msg']::after{
 	position: relative;
 	/*min-height: 60%;*/
 	height: 100%;
+	min-height: 480px;
 	padding-top: 40px;
 	overflow: auto;
 	padding-bottom: 55px;
@@ -202,6 +203,7 @@ div.footItem[data='foot_msg']::after{
 	font-size: 20px;
 	margin-top: 42px;
 	background-color: white;
+	border-top: 1px solid #ccc;
 }
 .foot_button>span{
 	display: block;
@@ -210,7 +212,7 @@ div.footItem[data='foot_msg']::after{
 input{
 	border-radius: 0;
 	color: #6f6f6f;
-	border-color: #858585;
+	border: 1px solid #858585;
 }
 a{
 	text-decoration: none;
