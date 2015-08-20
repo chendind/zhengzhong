@@ -4,7 +4,7 @@ body{
 /*******************/
 .content{
 	background-color: #f3f3f3;
-	top: -1px;
+	/*top: -1px;*/
     	color: #6f6f6f;
     	padding-bottom: 55px;
 }

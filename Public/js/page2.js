@@ -52,6 +52,7 @@ $("#confirm").click(function(){
                         alert('已经添加成功了');
                         $("input")[1].value=null;
                         $("input:eq(1)").focus();
+                        $("p.hidedom").hide();
                         return;
                 }
         }
@@ -64,6 +65,7 @@ $("#confirm").click(function(){
         showmsg('添加成功');
         $("input")[1].value=null;
         $("input:eq(1)").focus();
+        $("p.hidedom").hide();
         return ;
 });
 
