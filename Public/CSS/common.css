@@ -172,6 +172,7 @@ div.footItem[data='foot_msg']::after{
 	padding: 2px;
 	overflow-y: auto;
 	background-color: white;
+	box-sizing: border-box;
 }
 .resultItem{
 	display: table-row;
